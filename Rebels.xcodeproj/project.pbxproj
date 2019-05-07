@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E75F6C92281D713002A6B3F /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6C82281D713002A6B3F /* MainNavigationController.swift */; };
+		7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */; };
+		7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */; };
 		7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */; };
-		7EB5E331227F7D5D000DD7EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E330227F7D5D000DD7EE /* ViewController.swift */; };
 		7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E332227F7D5D000DD7EE /* Main.storyboard */; };
 		7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */; };
 		7EB5E339227F7D5E000DD7EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E338227F7D5E000DD7EE /* Assets.xcassets */; };
 		7EB5E33C227F7D5E000DD7EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E33A227F7D5E000DD7EE /* LaunchScreen.storyboard */; };
+		7EB5E348227F7DD1000DD7EE /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E347227F7DD1000DD7EE /* PlayersTableViewController.swift */; };
+		7EB5E34A227F88CD000DD7EE /* PlayersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E349227F88CD000DD7EE /* PlayersTableViewCell.swift */; };
+		7EB5E34C227FD900000DD7EE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E34B227FD900000DD7EE /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E75F6C82281D713002A6B3F /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewController.swift; sourceTree = "<group>"; };
+		7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		7EB5E32B227F7D5D000DD7EE /* Rebels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7EB5E330227F7D5D000DD7EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7EB5E333227F7D5D000DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7EB5E336227F7D5D000DD7EE /* Rebels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rebels.xcdatamodel; sourceTree = "<group>"; };
 		7EB5E338227F7D5E000DD7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EB5E33B227F7D5E000DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EB5E33D227F7D5E000DD7EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EB5E347227F7DD1000DD7EE /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
+		7EB5E349227F88CD000DD7EE /* PlayersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewCell.swift; sourceTree = "<group>"; };
+		7EB5E34B227FD900000DD7EE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E75F6CC2281D873002A6B3F /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7EB5E347227F7DD1000DD7EE /* PlayersTableViewController.swift */,
+				7EB5E349227F88CD000DD7EE /* PlayersTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		7E75F6CD2281D898002A6B3F /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				7EB5E338227F7D5E000DD7EE /* Assets.xcassets */,
+				7EB5E33A227F7D5E000DD7EE /* LaunchScreen.storyboard */,
+				7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
+		7E75F6D02281DA60002A6B3F /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */,
+				7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		7EB5E322227F7D5D000DD7EE = {
 			isa = PBXGroup;
 			children = (
@@ -56,11 +94,12 @@
 		7EB5E32D227F7D5D000DD7EE /* Rebels */ = {
 			isa = PBXGroup;
 			children = (
-				7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */,
-				7EB5E330227F7D5D000DD7EE /* ViewController.swift */,
+				7E75F6C82281D713002A6B3F /* MainNavigationController.swift */,
+				7E75F6CC2281D873002A6B3F /* TableView */,
+				7E75F6D02281DA60002A6B3F /* CollectionView */,
+				7EB5E34B227FD900000DD7EE /* Player.swift */,
 				7EB5E332227F7D5D000DD7EE /* Main.storyboard */,
-				7EB5E338227F7D5E000DD7EE /* Assets.xcassets */,
-				7EB5E33A227F7D5E000DD7EE /* LaunchScreen.storyboard */,
+				7E75F6CD2281D898002A6B3F /* Extra */,
 				7EB5E33D227F7D5E000DD7EE /* Info.plist */,
 				7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */,
 			);
@@ -138,8 +177,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */,
+				7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */,
+				7EB5E348227F7DD1000DD7EE /* PlayersTableViewController.swift in Sources */,
 				7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */,
-				7EB5E331227F7D5D000DD7EE /* ViewController.swift in Sources */,
+				7E75F6C92281D713002A6B3F /* MainNavigationController.swift in Sources */,
+				7EB5E34A227F88CD000DD7EE /* PlayersTableViewCell.swift in Sources */,
+				7EB5E34C227FD900000DD7EE /* Player.swift in Sources */,
 				7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
