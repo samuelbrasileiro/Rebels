@@ -8,20 +8,23 @@
 
 import UIKit
 
-class NewPlayerViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    var player = Player()
+    var index: Int?
     @IBOutlet weak var nome: UITextField!
-    
     
     @IBOutlet var image: UIImageView!
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        self.navigationItem.title = "New Player"
         nome.delegate = self
+        self.navigationItem.title = "Edit Player"
         self.image.layer.cornerRadius = self.image.bounds.width / 2
         
         self.image.layer.masksToBounds = true
+        
+        self.image.image = player.photo
+        self.nome.text = player.name
         
     }
     @IBAction func button(_ sender: Any) {
@@ -53,18 +56,14 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate, UINavigati
         
     }
     
-    @IBAction func addButton(_ sender: UIButton) {
-        let newPlayer = Player(name: self.nome.text ?? "", photo: self.image.image!)
-        players.append(newPlayer)
-        navigationController?.popViewController(animated: true)
-        
-        
+    @IBAction func saveButton(_ sender: UIButton) {
+        players[index!] = Player(name: self.nome.text ?? player.name, photo: self.image.image ?? player.photo!)
+            navigationController?.popViewController(animated: true)
     }
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-
+    
+    
 }

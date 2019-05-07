@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E75F6C92281D713002A6B3F /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6C82281D713002A6B3F /* MainNavigationController.swift */; };
 		7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */; };
 		7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */; };
 		7E75F6D22281EE38002A6B3F /* NewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */; };
+		7E75F6D72282173C002A6B3F /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */; };
 		7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */; };
 		7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E332227F7D5D000DD7EE /* Main.storyboard */; };
 		7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */; };
@@ -20,10 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E75F6C82281D713002A6B3F /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewController.swift; sourceTree = "<group>"; };
 		7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerViewController.swift; sourceTree = "<group>"; };
+		7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditPlayerViewController.swift; path = Rebels/ViewControllers/EditPlayerViewController.swift; sourceTree = SOURCE_ROOT; };
 		7EB5E32B227F7D5D000DD7EE /* Rebels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB5E333227F7D5D000DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */,
+				7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -91,7 +92,6 @@
 		7EB5E32D227F7D5D000DD7EE /* Rebels */ = {
 			isa = PBXGroup;
 			children = (
-				7E75F6C82281D713002A6B3F /* MainNavigationController.swift */,
 				7E75F6D02281DA60002A6B3F /* CollectionView */,
 				7EB5E34B227FD900000DD7EE /* Player.swift */,
 				7EB5E332227F7D5D000DD7EE /* Main.storyboard */,
@@ -177,8 +177,8 @@
 				7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */,
 				7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */,
 				7E75F6D22281EE38002A6B3F /* NewPlayerViewController.swift in Sources */,
+				7E75F6D72282173C002A6B3F /* EditPlayerViewController.swift in Sources */,
 				7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */,
-				7E75F6C92281D713002A6B3F /* MainNavigationController.swift in Sources */,
 				7EB5E34C227FD900000DD7EE /* Player.swift in Sources */,
 				7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */,
 			);

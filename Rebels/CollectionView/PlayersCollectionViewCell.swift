@@ -14,4 +14,5 @@ class PlayersCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
     
+    
 }

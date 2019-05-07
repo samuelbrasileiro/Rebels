@@ -9,50 +9,49 @@
 import UIKit
 
 var players = [Player]()
-
+var edit = true
 class PlayersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-
-    
-    private let sectionInsets = UIEdgeInsets(top: 50.0,
-                                             left: 20.0,
-                                             bottom: 50.0,
-                                             right: 20.0)
+    private let sectionInsets = UIEdgeInsets(top:   50.0,   left: 20.0,
+                                             bottom:50.0,   right: 20.0)
     private let itemsPerRow: CGFloat = 2
+    let startButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        navigationController?.navigationBar.tintColor = .yellow
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-
-        // Do any additional setup after loading the view.
+        startButton.frame = CGRect(origin: CGPoint(x: self.view.frame.width/2 - 60, y: self.view.frame.height - 120),size: CGSize(width: 120, height: 40))
+        startButton.setTitle("Start Game", for: .normal)
+        startButton.setTitleColor(.black, for: .normal)
+        startButton.backgroundColor = .yellow
+        startButton.layer.cornerRadius = 5
+        startButton.layer.masksToBounds = true
+        startButton.addTarget(self, action: #selector(startGame(_:)), for: .touchUpInside)
+        self.view.addSubview(startButton)
+        
+    }
+    @objc func startGame(_ sender: UIButton){
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StartGameViewController") as? UIViewController{
+            print("rihanna")
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = true
         super.viewWillAppear(animated)
-        
-        // Add a background view to the table view
+
         let imageView = UIImageView(image: UIImage(named: "starsBackground"))
         imageView.contentMode = .scaleAspectFill
         self.collectionView.backgroundView = imageView
         self.collectionView.backgroundColor = .black
         
+        self.collectionView.reloadData()
         
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -76,47 +75,37 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         cell.image.image = player.photo
         cell.image.layer.cornerRadius = cell.image.bounds.width / 2
         cell.image.layer.masksToBounds = true
-        print(cell.bounds.size)
+        //print(cell.bounds.size)
         cell.nome.text = player.name
         cell.nome.textColor = .yellow
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView,
+                                 shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if playersIndexPath == indexPath {
+            playersIndexPath = nil
+            
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditPlayerViewController") as? EditPlayerViewController{
+                vc.player = players[indexPath.row]
+                vc.index = indexPath.row
+                
+                navigationController?.pushViewController(vc, animated: true)
+                
+                playersIndexPath = nil
+            }
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        } else {
+            playersIndexPath = indexPath
+        }
+        
         return false
     }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
+
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
@@ -129,10 +118,36 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         return sectionInsets
     }
     
-    // 4
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+    
+    var playersIndexPath: IndexPath? {
+        didSet {
+            var indexPaths: [IndexPath] = []
+            if let playersIndexPath = playersIndexPath {
+                indexPaths.append(playersIndexPath)
+            }
+            
+            if let oldValue = oldValue {
+                indexPaths.append(oldValue)
+            }
+
+            collectionView.performBatchUpdates({
+                self.collectionView.reloadItems(at: indexPaths)
+            }) { _ in
+
+                if let playersIndexPath = self.playersIndexPath {
+                    self.collectionView.scrollToItem(at: playersIndexPath,
+                                                     at: .centeredVertically,
+                                                     animated: true)
+                }
+            }
+        }
+    }
+    
+    
 }
