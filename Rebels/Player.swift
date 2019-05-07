@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 enum Troop{
     case rebel
     case empire
@@ -15,14 +16,13 @@ enum Troop{
 
 class Player{
     var name: String
-    var team: Troop
-    var photo: String
+    private var team: Troop
+    var photo: UIImage?
     init(){
         self.name  = "default"
         self.team  = .none
-        self.photo = "default"
     }
-    init(name: String, photo: String){
+    init(name: String, photo: UIImage){
         self.name  = name
         self.photo = photo
         self.team  = .none
@@ -30,4 +30,5 @@ class Player{
     func setTeam(team: Troop){
         self.team = team
     }
+    func getTeam()->Troop{return self.team}
 }

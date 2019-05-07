@@ -8,12 +8,17 @@
 
 import UIKit
 
+var players = [Player]()
+
 class PlayersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+
+    
     private let sectionInsets = UIEdgeInsets(top: 50.0,
                                              left: 20.0,
                                              bottom: 50.0,
                                              right: 20.0)
-    private let itemsPerRow: CGFloat = 3
+    private let itemsPerRow: CGFloat = 2
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,7 +62,7 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 5
+        return players.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,10 +71,14 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? PlayersCollectionViewCell  else {
             fatalError("The dequeued cell is not an instance of PlayersTableViewCell.")
         }
-        cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+        let player = players[indexPath.row]
         
-        // Configure the cell
-    
+        cell.image.image = player.photo
+        cell.image.layer.cornerRadius = cell.image.bounds.width / 2
+        cell.image.layer.masksToBounds = true
+        print(cell.bounds.size)
+        cell.nome.text = player.name
+        cell.nome.textColor = .yellow
         return cell
     }
 
@@ -82,12 +91,12 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
     }
     */
 
-    /*
+    
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    */
+    
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
