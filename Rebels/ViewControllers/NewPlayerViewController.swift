@@ -34,9 +34,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate, UINavigati
             
             vc.sourceType = .camera
             vc.cameraCaptureMode = .photo
-            
             vc.cameraFlashMode = .off
-            
             self.present(vc, animated: true)
         }))
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction) in

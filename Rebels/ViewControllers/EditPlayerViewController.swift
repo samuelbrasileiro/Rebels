@@ -29,12 +29,25 @@ class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
     }
     @IBAction func button(_ sender: Any) {
         let vc = UIImagePickerController()
-        vc.sourceType = .camera
-        vc.allowsEditing = true
         vc.delegate = self
-        vc.cameraFlashMode = .off
+        vc.allowsEditing = true
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
-        present(vc, animated: true)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action:UIAlertAction) in
+            
+            vc.sourceType = .camera
+            vc.cameraCaptureMode = .photo
+            vc.cameraFlashMode = .off
+            self.present(vc, animated: true)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction) in
+            
+            vc.sourceType = .photoLibrary
+            self.present(vc, animated: true)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true)
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
