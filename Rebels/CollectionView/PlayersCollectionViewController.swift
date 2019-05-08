@@ -33,8 +33,7 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         
     }
     @objc func startGame(_ sender: UIButton){
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StartGameViewController") as? UIViewController{
-            print("rihanna")
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OptionsViewController") as? OptionsViewController{
             navigationController?.pushViewController(vc, animated: true)
         }
         
@@ -123,6 +122,11 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let temp = players.remove(at: sourceIndexPath.item)
+        players.insert(temp, at: destinationIndexPath.item)
     }
     
     var playersIndexPath: IndexPath? {

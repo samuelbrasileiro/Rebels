@@ -11,6 +11,7 @@
 		7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */; };
 		7E75F6D22281EE38002A6B3F /* NewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */; };
 		7E75F6D72282173C002A6B3F /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */; };
+		7E75F6DB22825E68002A6B3F /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6DA22825E68002A6B3F /* OptionsViewController.swift */; };
 		7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */; };
 		7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E332227F7D5D000DD7EE /* Main.storyboard */; };
 		7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */; };
@@ -24,6 +25,7 @@
 		7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerViewController.swift; sourceTree = "<group>"; };
 		7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditPlayerViewController.swift; path = Rebels/ViewControllers/EditPlayerViewController.swift; sourceTree = SOURCE_ROOT; };
+		7E75F6DA22825E68002A6B3F /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptionsViewController.swift; path = Rebels/ViewControllers/OptionsViewController.swift; sourceTree = SOURCE_ROOT; };
 		7EB5E32B227F7D5D000DD7EE /* Rebels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB5E333227F7D5D000DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */,
 				7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */,
+				7E75F6DA22825E68002A6B3F /* OptionsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */,
+				7E75F6DB22825E68002A6B3F /* OptionsViewController.swift in Sources */,
 				7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */,
 				7E75F6D22281EE38002A6B3F /* NewPlayerViewController.swift in Sources */,
 				7E75F6D72282173C002A6B3F /* EditPlayerViewController.swift in Sources */,

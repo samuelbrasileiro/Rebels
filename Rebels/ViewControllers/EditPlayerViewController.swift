@@ -74,6 +74,10 @@ class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
             navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func trashButton(_ sender: UIButton) {
+        players.remove(at: index!)
+        navigationController?.popViewController(animated: true)
+    }
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
