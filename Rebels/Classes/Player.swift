@@ -8,24 +8,27 @@
 
 import Foundation
 import UIKit
-enum Troop{
-    case rebel
-    case empire
-    case none
+enum Troop: String{
+    case rebel = "rebel"
+    case empire = "empire"
+    case none = "none"
 }
 
 class Player{
     var name: String
     private var team: Troop
-    var photo: UIImage?
+    var vote: Bool
+    var image: UIImage?
     init(){
         self.name  = "default"
         self.team  = .none
+        self.vote  = false
     }
-    init(name: String, photo: UIImage){
+    init(name: String, image: UIImage){
         self.name  = name
-        self.photo = photo
+        self.image = image
         self.team  = .none
+        self.vote  = false
     }
     func setTeam(team: Troop){
         self.team = team

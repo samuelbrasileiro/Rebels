@@ -66,7 +66,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate, UINavigati
     }
     
     @IBAction func addButton(_ sender: UIButton) {
-        let newPlayer = Player(name: self.nome.text ?? "", photo: self.image.image!)
+        let newPlayer = Player(name: self.nome.text ?? "", image: self.image.image!)
         players.append(newPlayer)
         navigationController?.popViewController(animated: true)
         

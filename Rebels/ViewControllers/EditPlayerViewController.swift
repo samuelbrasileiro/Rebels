@@ -23,7 +23,7 @@ class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
         
         self.image.layer.masksToBounds = true
         
-        self.image.image = player.photo
+        self.image.image = player.image
         self.nome.text = player.name
         
     }
@@ -70,7 +70,7 @@ class EditPlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        players[index!] = Player(name: self.nome.text ?? player.name, photo: self.image.image ?? player.photo!)
+        players[index!] = Player(name: self.nome.text ?? player.name, image: self.image.image ?? player.image!)
             navigationController?.popViewController(animated: true)
     }
     

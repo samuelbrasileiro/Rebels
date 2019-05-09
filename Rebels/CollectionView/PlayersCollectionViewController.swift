@@ -8,8 +8,11 @@
 
 import UIKit
 
+
+
 var players = [Player]()
-var edit = true
+var game: Game?
+
 class PlayersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let sectionInsets = UIEdgeInsets(top:   50.0,   left: 20.0,
@@ -19,6 +22,12 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        players = [ Player(name: "Samuel1", image: UIImage(named: "photo1")!),
+                    Player(name: "Samuel2", image: UIImage(named: "photo2")!),
+                    Player(name: "Samuel3", image: UIImage(named: "photo3")!),
+                    Player(name: "Samuel4", image: UIImage(named: "photo4")!),
+                    Player(name: "Samuel5", image: UIImage(named: "photo5")!)
+                ]
         navigationController?.navigationBar.tintColor = .yellow
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
@@ -33,7 +42,10 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         
     }
     @objc func startGame(_ sender: UIButton){
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OptionsViewController") as? OptionsViewController{
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowTeamViewController") as? ShowTeamViewController{
+            
+            //game = Game(players: players)
+            game = Game(players: players)
             navigationController?.pushViewController(vc, animated: true)
         }
         
@@ -71,7 +83,7 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         }
         let player = players[indexPath.row]
         
-        cell.image.image = player.photo
+        cell.image.image = player.image
         cell.image.layer.cornerRadius = cell.image.bounds.width / 2
         cell.image.layer.masksToBounds = true
         //print(cell.bounds.size)
@@ -125,8 +137,8 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
     }
     
     override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let temp = players.remove(at: sourceIndexPath.item)
-        players.insert(temp, at: destinationIndexPath.item)
+        let temp = players.remove(at: sourceIndexPath.row)
+        players.insert(temp, at: destinationIndexPath.row)
     }
     
     var playersIndexPath: IndexPath? {
