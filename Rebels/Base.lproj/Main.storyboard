@@ -129,15 +129,11 @@
                             <outlet property="delegate" destination="eld-BM-lCE" id="139-dH-dwR"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Jogadores" id="4A0-SK-Bx7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PG0-5N-03P">
-                            <color key="tintColor" red="1" green="1" blue="0.047865316900000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Jogadores" id="4A0-SK-Bx7"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSP-VV-Udd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1802" y="320"/>
+            <point key="canvasLocation" x="1718" y="320"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FRb-oA-lbw">
@@ -223,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jV3-Su-8qv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="320"/>
+            <point key="canvasLocation" x="2548" y="320"/>
         </scene>
         <!--Show Team View Controller-->
         <scene sceneID="tB5-pk-KsS">
@@ -296,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Is0-eZ-QLe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.399999999999999" y="1012.4437781109445"/>
+            <point key="canvasLocation" x="854" y="1012"/>
         </scene>
         <!--Create Mission View Controller-->
         <scene sceneID="iG4-zf-u9C">
@@ -357,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNa-23-gcG" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="1738"/>
+            <point key="canvasLocation" x="1718" y="1012"/>
         </scene>
         <!--Show Team View Controller-->
         <scene sceneID="3JH-ry-ntr">
@@ -418,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHr-fz-BPj" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="1012"/>
+            <point key="canvasLocation" x="2548" y="1012"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u2p-8v-5we">
@@ -441,30 +437,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dly-jN-zB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-914" y="1012"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="B6C-WA-8Zx">
-            <objects>
-                <navigationController storyboardIdentifier="CreateMissionNavigationController" id="SQH-vG-h84" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="9kj-Gf-mkU">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="0.047865316900000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="0.047865316900000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="U4h-DS-TsB" kind="relationship" relationship="rootViewController" id="YhS-PW-rmt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ha1-4S-7sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-914" y="1739"/>
+            <point key="canvasLocation" x="-26" y="1012"/>
         </scene>
     </scenes>
     <resources>

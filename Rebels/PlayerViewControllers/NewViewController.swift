@@ -16,7 +16,7 @@ class NewPlayerViewController: BasePlayerViewController {
         
         self.trashButton.isHidden = true
         
-        self.clickButton.setTitle("Add", for: .normal)
+        self.clickButton.setTitle("Adicionar", for: .normal)
         self.clickButton.addTarget(self, action: #selector(add), for: .touchUpInside)
     }
     

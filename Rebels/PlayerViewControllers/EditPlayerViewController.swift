@@ -14,7 +14,7 @@ class EditPlayerViewController: BasePlayerViewController {
         super.viewDidLoad()
         self.image.image = player.image
         self.nome.text = player.name
-        self.clickButton.setTitle("Edit", for: .normal)
+        self.clickButton.setTitle("Salvar", for: .normal)
         self.trashButton.isHidden = false
         
         self.clickButton.addTarget(self, action: #selector(save), for: .touchUpInside)
