@@ -11,9 +11,12 @@
 		7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */; };
 		7E75F6D22281EE38002A6B3F /* NewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */; };
 		7E75F6D72282173C002A6B3F /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */; };
-		7E75F6DB22825E68002A6B3F /* ShowTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6DA22825E68002A6B3F /* ShowTeamViewController.swift */; };
 		7E75F6DD22835BE8002A6B3F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6DC22835BE8002A6B3F /* Game.swift */; };
 		7E75F6DF228367E0002A6B3F /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6DE228367E0002A6B3F /* Mission.swift */; };
+		7E9754752283C9F500D9B8A9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9754742283C9F500D9B8A9 /* Sound.swift */; };
+		7E9754772283CB9E00D9B8A9 /* EndorTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E9754762283CB9E00D9B8A9 /* EndorTheme.mp3 */; };
+		7E97547B228483FE00D9B8A9 /* CreateMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97547A228483FE00D9B8A9 /* CreateMissionViewController.swift */; };
+		7E97547D2284B56000D9B8A9 /* ShowTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97547C2284B56000D9B8A9 /* ShowTeamViewController.swift */; };
 		7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */; };
 		7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E332227F7D5D000DD7EE /* Main.storyboard */; };
 		7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */; };
@@ -26,11 +29,14 @@
 		7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewController.swift; sourceTree = "<group>"; };
 		7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerViewController.swift; sourceTree = "<group>"; };
-		7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditPlayerViewController.swift; path = Rebels/ViewControllers/EditPlayerViewController.swift; sourceTree = SOURCE_ROOT; };
-		7E75F6DA22825E68002A6B3F /* ShowTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowTeamViewController.swift; path = Rebels/ViewControllers/ShowTeamViewController.swift; sourceTree = SOURCE_ROOT; };
+		7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditPlayerViewController.swift; path = Rebels/CollectionView/EditPlayerViewController.swift; sourceTree = SOURCE_ROOT; };
 		7E75F6DC22835BE8002A6B3F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		7E75F6DE228367E0002A6B3F /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		7E75F6E122837B99002A6B3F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		7E9754742283C9F500D9B8A9 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		7E9754762283CB9E00D9B8A9 /* EndorTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = EndorTheme.mp3; path = ../../../../../../Downloads/EndorTheme.mp3; sourceTree = "<group>"; };
+		7E97547A228483FE00D9B8A9 /* CreateMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMissionViewController.swift; sourceTree = "<group>"; };
+		7E97547C2284B56000D9B8A9 /* ShowTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTeamViewController.swift; sourceTree = "<group>"; };
 		7EB5E32B227F7D5D000DD7EE /* Rebels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB5E333227F7D5D000DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				7EB5E338227F7D5E000DD7EE /* Assets.xcassets */,
+				7E9754762283CB9E00D9B8A9 /* EndorTheme.mp3 */,
 				7EB5E33A227F7D5E000DD7EE /* LaunchScreen.storyboard */,
 				7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */,
 			);
@@ -67,18 +74,19 @@
 			children = (
 				7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */,
 				7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */,
+				7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */,
+				7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		7E75F6D52281F360002A6B3F /* ViewControllers */ = {
+		7E75F6D52281F360002A6B3F /* GameViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7E75F6D12281EE38002A6B3F /* NewPlayerViewController.swift */,
-				7E75F6D62282173C002A6B3F /* EditPlayerViewController.swift */,
-				7E75F6DA22825E68002A6B3F /* ShowTeamViewController.swift */,
+				7E97547C2284B56000D9B8A9 /* ShowTeamViewController.swift */,
+				7E97547A228483FE00D9B8A9 /* CreateMissionViewController.swift */,
 			);
-			path = ViewControllers;
+			path = GameViewControllers;
 			sourceTree = "<group>";
 		};
 		7E75F6E022836802002A6B3F /* Classes */ = {
@@ -87,6 +95,7 @@
 				7EB5E34B227FD900000DD7EE /* Player.swift */,
 				7E75F6DC22835BE8002A6B3F /* Game.swift */,
 				7E75F6DE228367E0002A6B3F /* Mission.swift */,
+				7E9754742283C9F500D9B8A9 /* Sound.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -114,7 +123,7 @@
 				7E75F6E022836802002A6B3F /* Classes */,
 				7EB5E332227F7D5D000DD7EE /* Main.storyboard */,
 				7E75F6E122837B99002A6B3F /* MyPlayground.playground */,
-				7E75F6D52281F360002A6B3F /* ViewControllers */,
+				7E75F6D52281F360002A6B3F /* GameViewControllers */,
 				7E75F6CD2281D898002A6B3F /* Extra */,
 				7EB5E33D227F7D5E000DD7EE /* Info.plist */,
 				7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */,
@@ -181,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB5E33C227F7D5E000DD7EE /* LaunchScreen.storyboard in Resources */,
+				7E9754772283CB9E00D9B8A9 /* EndorTheme.mp3 in Resources */,
 				7EB5E339227F7D5E000DD7EE /* Assets.xcassets in Resources */,
 				7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */,
 			);
@@ -194,11 +204,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */,
+				7E9754752283C9F500D9B8A9 /* Sound.swift in Sources */,
 				7E75F6DD22835BE8002A6B3F /* Game.swift in Sources */,
-				7E75F6DB22825E68002A6B3F /* ShowTeamViewController.swift in Sources */,
 				7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */,
 				7E75F6D22281EE38002A6B3F /* NewPlayerViewController.swift in Sources */,
 				7E75F6D72282173C002A6B3F /* EditPlayerViewController.swift in Sources */,
+				7E97547D2284B56000D9B8A9 /* ShowTeamViewController.swift in Sources */,
+				7E97547B228483FE00D9B8A9 /* CreateMissionViewController.swift in Sources */,
 				7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */,
 				7EB5E34C227FD900000DD7EE /* Player.swift in Sources */,
 				7E75F6DF228367E0002A6B3F /* Mission.swift in Sources */,

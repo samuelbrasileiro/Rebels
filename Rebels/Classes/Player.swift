@@ -12,6 +12,16 @@ enum Troop: String{
     case rebel = "rebel"
     case empire = "empire"
     case none = "none"
+    func name()->String{
+        switch self {
+        case .rebel:
+            return "Aliança Rebelde"
+        case .empire:
+            return "Império"
+        default:
+            return "Nenhum"
+        }
+    }
 }
 
 class Player{

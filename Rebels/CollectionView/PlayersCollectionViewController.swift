@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 var players = [Player]()
 var game: Game?
 
@@ -22,6 +21,8 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playSound(name: "EndorTheme")
         players = [ Player(name: "Samuel1", image: UIImage(named: "photo1")!),
                     Player(name: "Samuel2", image: UIImage(named: "photo2")!),
                     Player(name: "Samuel3", image: UIImage(named: "photo3")!),
@@ -32,7 +33,7 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         startButton.frame = CGRect(origin: CGPoint(x: self.view.frame.width/2 - 60, y: self.view.frame.height - 120),size: CGSize(width: 120, height: 40))
-        startButton.setTitle("Start Game", for: .normal)
+        startButton.setTitle("Começar Jogo", for: .normal)
         startButton.setTitleColor(.black, for: .normal)
         startButton.backgroundColor = .yellow
         startButton.layer.cornerRadius = 5
@@ -42,18 +43,20 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         
     }
     @objc func startGame(_ sender: UIButton){
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowTeamViewController") as? ShowTeamViewController{
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowTeamNavigationController") as? UINavigationController{
             
             //game = Game(players: players)
             game = Game(players: players)
-            navigationController?.pushViewController(vc, animated: true)
+            //navigationController?.pushViewController(vc, animated: true)
+            closeSession = false
+            present(vc, animated: true)
         }
         
     }
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = true
         super.viewWillAppear(animated)
-
+        
         let imageView = UIImageView(image: UIImage(named: "starsBackground"))
         imageView.contentMode = .scaleAspectFill
         self.collectionView.backgroundView = imageView
@@ -84,9 +87,10 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         let player = players[indexPath.row]
         
         cell.image.image = player.image
-        cell.image.layer.cornerRadius = cell.image.bounds.width / 2
+        cell.image.layer.cornerRadius = cell.image.frame.width / 2
         cell.image.layer.masksToBounds = true
-        //print(cell.bounds.size)
+        cell.image.contentMode = .scaleAspectFill
+        
         cell.nome.text = player.name
         cell.nome.textColor = .yellow
         return cell
