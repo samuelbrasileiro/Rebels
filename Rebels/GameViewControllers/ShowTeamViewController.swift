@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import QuartzCore
 
 enum Phase: Int{
     case first = 1
@@ -28,7 +27,7 @@ enum Phase: Int{
     
 }
 var closeSession: Bool?
-class ShowTeamViewController: UIViewController {
+class ShowTeamViewController: BaseGameViewController {
     
     @IBOutlet weak var team: UILabel!
     
@@ -52,7 +51,8 @@ class ShowTeamViewController: UIViewController {
         super.viewDidLoad()
         
         self.playerIndex = 0
-
+        
+        
         self.image.layer.cornerRadius = self.image.frame.width / 2
         self.image.layer.masksToBounds = true
         self.image.contentMode = .scaleAspectFill
@@ -73,32 +73,14 @@ class ShowTeamViewController: UIViewController {
         self.name.text = game?.players[playerIndex!].name
         self.team.text = nil
         
-        self.navigationItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "cancel"), style: .done, target: self, action: #selector(exitAlert)),animated: true)
         button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
         
         self.instruction.text = "Entregue o dispositivo para este(a) jogador(a). Selecione o perfil quando estiver pronto."
         
         addShowRoleButton()
-        
-    }
-    
-    //when the Navigantion Controller X item is pressed
-    @objc func exitAlert(){
-        let actionSheet = UIAlertController(title: "Deseja parar este jogo?", message: nil, preferredStyle: .alert)
-        
-        actionSheet.addAction(UIAlertAction(title: "Parar", style: .default, handler: {(action:UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-        
-        self.present(actionSheet, animated: true)
-        
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
         waitPlayer(index: self.playerIndex!)
-        
     }
+
     
     //When the Photo is pressed
     @objc func buttonAction(_ sender: UIButton){
@@ -196,8 +178,8 @@ class ShowTeamViewController: UIViewController {
     func checkEnd()->Bool{
         if(self.playerIndex! == game!.numberOfPlayers){
             
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionNavigationController")
-                present(vc, animated: false, completion: nil)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
+        self.navigationController?.pushViewController(vc, animated: false)
             return true
         }
         return false

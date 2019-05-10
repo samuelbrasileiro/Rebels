@@ -7,29 +7,49 @@
 //
 
 import UIKit
+func instantiateFromSuperclassStoryboard(type: Int, base: String) -> UIViewController {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let controller = storyboard.instantiateViewController(withIdentifier: base)
+    switch type {
+    case 0:
+        object_setClass(controller, EditPlayerViewController.self)
+        return controller as! EditPlayerViewController
+    case 1:
+        object_setClass(controller, NewPlayerViewController.self)
+        return controller as! NewPlayerViewController
+    default:
+        return controller
+    }
+    
+}
 
-class NewPlayerViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    var player = Player()
+    var index: Int?
     
     @IBOutlet weak var nome: UITextField!
-    
-    
     @IBOutlet var image: UIImageView!
+    @IBOutlet var clickButton: UIButton!
+    
+    @IBOutlet var trashButton: UIButton!
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        self.navigationItem.title = "Novo Jogador"
         nome.delegate = self
+        
         self.image.layer.cornerRadius = self.image.bounds.width / 2
         
         self.image.layer.masksToBounds = true
-        
     }
+       
+    
     @IBAction func button(_ sender: Any) {
         let vc = UIImagePickerController()
         vc.delegate = self
         vc.allowsEditing = true
         let actionSheet = UIAlertController(title: "Escolha uma fonte", message: nil, preferredStyle: .actionSheet)
-
+        
         actionSheet.addAction(UIAlertAction(title: "Câmera", style: .default, handler: {(action:UIAlertAction) in
             
             vc.sourceType = .camera
@@ -37,12 +57,14 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate, UINavigati
             vc.cameraFlashMode = .off
             self.present(vc, animated: true)
         }))
-        actionSheet.addAction(UIAlertAction(title: "Biblioteca de fotos", style: .default, handler: {(action:UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: "Biblioteca de Fotos", style: .default, handler: {(action:UIAlertAction) in
             
             vc.sourceType = .photoLibrary
             self.present(vc, animated: true)
         }))
-        actionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        let cancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        cancel.setValue(UIColor.red, forKey: "titleTextColor")
+        actionSheet.addAction(cancel)
         
         self.present(actionSheet, animated: true)
         
@@ -56,7 +78,8 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate, UINavigati
         return false
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        dismiss(animated: true)
+        picker.dismiss(animated: true)
+        
         guard let image = info[.editedImage] as? UIImage else {
             print("Nenhuma imagem encontrada")
             return
@@ -65,18 +88,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate, UINavigati
         
     }
     
-    @IBAction func addButton(_ sender: UIButton) {
-        let newPlayer = Player(name: self.nome.text ?? "", image: self.image.image!)
-        players.append(newPlayer)
-        navigationController?.popViewController(animated: true)
-        
-        
-    }
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-
+    
 }

@@ -18,10 +18,14 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
                                              bottom:50.0,   right: 20.0)
     private let itemsPerRow: CGFloat = 2
     let startButton = UIButton()
-    
+    @objc func add(){
+        if let vc = instantiateFromSuperclassStoryboard(type: 1, base: "BasePlayerViewController") as? NewPlayerViewController{
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
         playSound(name: "EndorTheme")
         players = [ Player(name: "Samuel1", image: UIImage(named: "photo1")!),
                     Player(name: "Samuel2", image: UIImage(named: "photo2")!),
@@ -101,7 +105,7 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         if playersIndexPath == indexPath {
             playersIndexPath = nil
             
-            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditPlayerViewController") as? EditPlayerViewController{
+            if let vc = instantiateFromSuperclassStoryboard(type: 0, base: "BasePlayerViewController") as? EditPlayerViewController{
                 vc.player = players[indexPath.row]
                 vc.index = indexPath.row
                 

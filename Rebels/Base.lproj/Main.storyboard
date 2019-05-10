@@ -132,77 +132,12 @@
                     <navigationItem key="navigationItem" title="Jogadores" id="4A0-SK-Bx7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PG0-5N-03P">
                             <color key="tintColor" red="1" green="1" blue="0.047865316900000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="V5G-ph-vbK" kind="show" identifier="NewPlayerSegue" id="Ml2-WK-MP8"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSP-VV-Udd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1802" y="320"/>
-        </scene>
-        <!--New Player View Controller-->
-        <scene sceneID="mLE-Kn-nLY">
-            <objects>
-                <viewController id="V5G-ph-vbK" customClass="NewPlayerViewController" customModule="Rebels" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KaK-UB-Vh3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="13j-P4-6yN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hfy-gA-Owj">
-                                <rect key="frame" x="88" y="377" width="198" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_user_male" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCj-gB-u58">
-                                <rect key="frame" x="127" y="175" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" red="1" green="1" blue="0.047865316900000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQQ-TQ-n0y">
-                                <rect key="frame" x="127" y="175" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="button:" destination="V5G-ph-vbK" eventType="touchUpInside" id="g3k-41-YV1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvT-be-Se7">
-                                <rect key="frame" x="115" y="484" width="144" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.047865316900000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Adicionar">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="addButton:" destination="V5G-ph-vbK" eventType="touchUpInside" id="6Qh-Ga-tYe"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="13j-P4-6yN" firstAttribute="trailing" secondItem="Nt6-10-pJ2" secondAttribute="trailing" id="Fpj-23-mLW"/>
-                            <constraint firstItem="13j-P4-6yN" firstAttribute="bottom" secondItem="Nt6-10-pJ2" secondAttribute="bottom" id="T19-dC-MQg"/>
-                            <constraint firstItem="13j-P4-6yN" firstAttribute="top" secondItem="KaK-UB-Vh3" secondAttribute="top" id="jdF-q0-sjg"/>
-                            <constraint firstItem="13j-P4-6yN" firstAttribute="leading" secondItem="Nt6-10-pJ2" secondAttribute="leading" id="o7E-ly-DOV"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Nt6-10-pJ2"/>
-                    </view>
-                    <connections>
-                        <outlet property="image" destination="RCj-gB-u58" id="dVX-j3-c7P"/>
-                        <outlet property="nome" destination="Hfy-gA-Owj" id="0G1-KO-LJr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xLK-B7-1zZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2576.8000000000002" y="319.79010494752629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FRb-oA-lbw">
@@ -227,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="-26" y="320"/>
         </scene>
-        <!--Edit Player View Controller-->
+        <!--Base Player View Controller-->
         <scene sceneID="57q-BO-NL3">
             <objects>
-                <viewController storyboardIdentifier="EditPlayerViewController" id="6uf-8c-DEo" customClass="EditPlayerViewController" customModule="Rebels" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BasePlayerViewController" id="6uf-8c-DEo" customClass="BasePlayerViewController" customModule="Rebels" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TgY-xB-KqF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +191,7 @@
                                 <rect key="frame" x="127" y="175" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="button:" destination="6uf-8c-DEo" eventType="touchUpInside" id="dZf-nm-IeC"/>
+                                    <action selector="button:" destination="6uf-8c-DEo" eventType="touchUpInside" id="gcz-sB-GtC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-c8-VyS">
@@ -267,9 +202,6 @@
                                 <state key="normal" title="Salvar">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="saveButton:" destination="6uf-8c-DEo" eventType="touchUpInside" id="x3j-fO-bfo"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEu-WT-2pM">
                                 <rect key="frame" x="160" y="567" width="54" height="46"/>
@@ -277,22 +209,21 @@
                                 <state key="normal" image="trashCan">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="trashButton:" destination="6uf-8c-DEo" eventType="touchUpInside" id="6I6-Ki-zmv"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xy2-qJ-5IM"/>
                     </view>
                     <connections>
-                        <outlet property="image" destination="7jo-M3-9Cv" id="nqr-MX-kHa"/>
-                        <outlet property="nome" destination="ieu-7k-Hnw" id="8u8-QJ-DbO"/>
+                        <outlet property="clickButton" destination="7Kd-c8-VyS" id="D42-V5-NC2"/>
+                        <outlet property="image" destination="7jo-M3-9Cv" id="Psn-hz-SBg"/>
+                        <outlet property="nome" destination="ieu-7k-Hnw" id="W4r-9s-XJP"/>
+                        <outlet property="trashButton" destination="HEu-WT-2pM" id="BOZ-yF-Yx4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jV3-Su-8qv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="-427"/>
+            <point key="canvasLocation" x="2582" y="320"/>
         </scene>
         <!--Show Team View Controller-->
         <scene sceneID="tB5-pk-KsS">
@@ -370,7 +301,7 @@
         <!--Create Mission View Controller-->
         <scene sceneID="iG4-zf-u9C">
             <objects>
-                <viewController storyboardIdentifier="ShowMissionViewController" id="U4h-DS-TsB" customClass="CreateMissionViewController" customModule="Rebels" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateMissionViewController" id="U4h-DS-TsB" customClass="CreateMissionViewController" customModule="Rebels" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9f2-8y-Cwx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
