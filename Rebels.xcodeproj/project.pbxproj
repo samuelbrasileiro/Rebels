@@ -18,7 +18,6 @@
 		7E9754892285F4CC00D9B8A9 /* BasePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9754862285F4CC00D9B8A9 /* BasePlayerViewController.swift */; };
 		7E97548A2285F4CC00D9B8A9 /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9754872285F4CC00D9B8A9 /* EditPlayerViewController.swift */; };
 		7E97548B2285F4CC00D9B8A9 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9754882285F4CC00D9B8A9 /* NewViewController.swift */; };
-		7E97548D228617A800D9B8A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7E97548C228617A800D9B8A9 /* README.md */; };
 		7E975494228727D200D9B8A9 /* EndorTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E975493228727D200D9B8A9 /* EndorTheme.mp3 */; };
 		7E97549A22872E7F00D9B8A9 /* starsVideoBackground.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7E97549922872E7F00D9B8A9 /* starsVideoBackground.mov */; };
 		7E97549C2287361C00D9B8A9 /* rebelsFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E97549B2287360600D9B8A9 /* rebelsFont.ttf */; };
@@ -44,7 +43,6 @@
 		7E9754862285F4CC00D9B8A9 /* BasePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePlayerViewController.swift; sourceTree = "<group>"; };
 		7E9754872285F4CC00D9B8A9 /* EditPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlayerViewController.swift; sourceTree = "<group>"; };
 		7E9754882285F4CC00D9B8A9 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
-		7E97548C228617A800D9B8A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Rebels/README.md; sourceTree = SOURCE_ROOT; };
 		7E975493228727D200D9B8A9 /* EndorTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EndorTheme.mp3; sourceTree = "<group>"; };
 		7E97549922872E7F00D9B8A9 /* starsVideoBackground.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = starsVideoBackground.mov; sourceTree = "<group>"; };
 		7E97549B2287360600D9B8A9 /* rebelsFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rebelsFont.ttf; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				7E75F6CD2281D898002A6B3F /* Extra */,
 				7EB5E33D227F7D5E000DD7EE /* Info.plist */,
 				7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */,
-				7E97548C228617A800D9B8A9 /* README.md */,
 			);
 			path = Rebels;
 			sourceTree = "<group>";
@@ -226,7 +223,6 @@
 				7E97549C2287361C00D9B8A9 /* rebelsFont.ttf in Resources */,
 				7E975494228727D200D9B8A9 /* EndorTheme.mp3 in Resources */,
 				7EB5E33C227F7D5E000DD7EE /* LaunchScreen.storyboard in Resources */,
-				7E97548D228617A800D9B8A9 /* README.md in Resources */,
 				7EB5E339227F7D5E000DD7EE /* Assets.xcassets in Resources */,
 				7E97549A22872E7F00D9B8A9 /* starsVideoBackground.mov in Resources */,
 				7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */,
