@@ -7,10 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 class Mission{
     var numberOfPlayers: Int
-    var leader: Int?
     var players = [Player]()
     var completed: Bool
     var winner: Troop
@@ -34,19 +34,7 @@ class Mission{
     func setPlayers(players: [Player]){
         self.players = players
     }
-    func setLeader(leader: Int){
-        self.leader = leader
-    }
-    func changeLeader(){
-        if leader == nil {return}
-        
-        if(leader!<players.count){
-            leader = leader! + 1
-        }
-        else{
-            leader = 0
-        }
-    }
+    
     func isAccepted(players: [Player])->Bool{
         voteCounter = 0
         for player in players{
@@ -59,4 +47,8 @@ class Mission{
         }
         return true
     }
+    func missionImage()->UIImage{
+        return UIImage(named: "mission" + String(self.numberOfPlayers))!
+    }
+    
 }

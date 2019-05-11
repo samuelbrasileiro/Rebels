@@ -14,11 +14,13 @@ class Game{
     var players: [Player]
     var missions: [Mission]
     var missionIndex: Int
+    var leader: Int
     
     init(players: [Player]){
         self.numberOfPlayers = players.count
         self.players = players
         self.missionIndex = 0
+        self.leader = 0
         for i in 0..<self.numberOfPlayers{
             players[i].setTeam(team: .empire)
         }
@@ -54,9 +56,46 @@ class Game{
             players[number].setTeam(team: .rebel)
         }
     }
+    func getLeader()->Player{
+        return players[leader]
+    }
+    func missionTitle()->String{
+        var title: String
+        switch missionIndex {
+        case 0:
+            title = "Primeira"
+        case 1:
+            title = "Segunda"
+        case 2:
+            title = "Terceira"
+        case 3:
+            title = "Quarta"
+        case 5:
+            title = "Quinta"
+        default:
+            title = "Nenhuma"
+        }
+        title += " Missão"
+        return title
+    }
     func clearVotes(){
         for i in 0..<players.count{
             players[i].vote = false
+        }
+    }
+    func getMission()->Mission{
+        return missions[missionIndex]
+    }
+    
+    func setLeader(leader: Int){
+        self.leader = leader
+    }
+    func changeLeader(){
+        if(self.leader < players.count){
+            self.leader += 1
+        }
+        else{
+            self.leader = 0
         }
     }
     

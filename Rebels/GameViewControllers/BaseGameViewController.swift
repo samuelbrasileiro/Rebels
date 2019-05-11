@@ -15,6 +15,8 @@ class BaseGameViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         self.navigationItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "cancel"), style: .done, target: self, action: #selector(exitAlert)),animated: true)
+        self.navigationItem.setRightBarButton(UIBarButtonItem(customView: Pontuation.init(colorArray: [.clear,.clear,.clear,.clear,.clear])), animated: true)
+        
     }
     
     @objc func exitAlert(){

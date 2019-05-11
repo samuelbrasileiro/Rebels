@@ -1,5 +1,5 @@
 //
-//  NewPlayerViewController.swift
+//  BasePlayerViewController.swift
 //  Rebels
 //
 //  Created by Samuel on 07/05/19.

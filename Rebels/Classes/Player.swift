@@ -1,5 +1,5 @@
 //
-//  players.swift
+//  Player.swift
 //  Rebels
 //
 //  Created by Samuel on 05/05/19.
