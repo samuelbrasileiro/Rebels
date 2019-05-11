@@ -22,6 +22,7 @@
 		7E97549A22872E7F00D9B8A9 /* starsVideoBackground.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7E97549922872E7F00D9B8A9 /* starsVideoBackground.mov */; };
 		7E97549C2287361C00D9B8A9 /* rebelsFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E97549B2287360600D9B8A9 /* rebelsFont.ttf */; };
 		7E97549E22877ADE00D9B8A9 /* Pontuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97549D22877ADE00D9B8A9 /* Pontuation.swift */; };
+		7E9754A0228785E800D9B8A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7E97549F228785E800D9B8A9 /* README.md */; };
 		7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */; };
 		7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E332227F7D5D000DD7EE /* Main.storyboard */; };
 		7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */; };
@@ -47,6 +48,7 @@
 		7E97549922872E7F00D9B8A9 /* starsVideoBackground.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = starsVideoBackground.mov; sourceTree = "<group>"; };
 		7E97549B2287360600D9B8A9 /* rebelsFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rebelsFont.ttf; sourceTree = "<group>"; };
 		7E97549D22877ADE00D9B8A9 /* Pontuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pontuation.swift; sourceTree = "<group>"; };
+		7E97549F228785E800D9B8A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		7EB5E32B227F7D5D000DD7EE /* Rebels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB5E333227F7D5D000DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				7E75F6CD2281D898002A6B3F /* Extra */,
 				7EB5E33D227F7D5E000DD7EE /* Info.plist */,
 				7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */,
+				7E97549F228785E800D9B8A9 /* README.md */,
 			);
 			path = Rebels;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				7E97549C2287361C00D9B8A9 /* rebelsFont.ttf in Resources */,
 				7E975494228727D200D9B8A9 /* EndorTheme.mp3 in Resources */,
 				7EB5E33C227F7D5E000DD7EE /* LaunchScreen.storyboard in Resources */,
+				7E9754A0228785E800D9B8A9 /* README.md in Resources */,
 				7EB5E339227F7D5E000DD7EE /* Assets.xcassets in Resources */,
 				7E97549A22872E7F00D9B8A9 /* starsVideoBackground.mov in Resources */,
 				7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */,
