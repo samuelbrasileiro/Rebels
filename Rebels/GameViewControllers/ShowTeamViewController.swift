@@ -26,7 +26,7 @@ enum Phase: Int{
     }
     
 }
-var closeSession: Bool?
+
 class ShowTeamViewController: BaseGameViewController {
     
     @IBOutlet weak var team: UILabel!

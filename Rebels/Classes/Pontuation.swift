@@ -7,9 +7,12 @@
 //
 
 import UIKit
-
+class HighlightImage: Ring{
+    
+}
 class Ring: UIView{
-    func draw(color: UIColor){
+    
+    func draw(color: UIColor, strokeColor: UIColor){
         let halfSize:CGFloat = bounds.size.height/2
         let desiredLineWidth:CGFloat = 1    // your desired value
         
@@ -21,13 +24,15 @@ class Ring: UIView{
             clockwise: true)
         
         let shapeLayer = CAShapeLayer()
+        
         shapeLayer.path = circlePath.cgPath
         
         shapeLayer.fillColor = color.cgColor
-        shapeLayer.strokeColor = UIColor.yellow.cgColor
+        
+        shapeLayer.strokeColor = strokeColor.cgColor
         shapeLayer.lineWidth = desiredLineWidth
         
-        layer.addSublayer(shapeLayer)
+        self.layer.addSublayer(shapeLayer)
     }
     
     
@@ -41,7 +46,7 @@ class Pontuation: UIView{
             
             if i != 0 {i += (5 * CGFloat(x))}
             let view = Ring(frame: CGRect(x: i, y: 0, width: 20, height: 20))
-            view.draw(color: colorArray[x])
+            view.draw(color: colorArray[x], strokeColor: .yellow)
             self.addSubview(view)
         }
         

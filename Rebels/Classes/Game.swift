@@ -15,12 +15,13 @@ class Game{
     var missions: [Mission]
     var missionIndex: Int
     var leader: Int
-    
+    var numberOfSelected: Int
     init(players: [Player]){
         self.numberOfPlayers = players.count
         self.players = players
         self.missionIndex = 0
         self.leader = 0
+        self.numberOfSelected = 0
         for i in 0..<self.numberOfPlayers{
             players[i].setTeam(team: .empire)
         }
@@ -56,6 +57,26 @@ class Game{
             players[number].setTeam(team: .rebel)
         }
     }
+    func selectionCompleted()->Bool{
+        if self.numberOfSelected == missions[missionIndex].numberOfPlayers{
+            return true
+        }
+        return false
+    }
+    func changeSelection(index: Int){
+        
+        if players[index].selected == false {
+            if self.numberOfSelected < missions[missionIndex].numberOfPlayers{
+                self.numberOfSelected += 1
+                players[index].selected = true
+            }
+        }
+        else{
+            self.numberOfSelected -= 1
+            players[index].selected = false
+        }
+    }
+    
     func getLeader()->Player{
         return players[leader]
     }
@@ -96,6 +117,12 @@ class Game{
         }
         else{
             self.leader = 0
+        }
+    }
+    func clear(){
+        for i in 0..<players.count{
+            players[i].selected = false
+            players[i].vote = false
         }
     }
     

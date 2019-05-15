@@ -47,6 +47,8 @@ class Mission{
         }
         return true
     }
+    
+    
     func missionImage()->UIImage{
         return UIImage(named: "mission" + String(self.numberOfPlayers))!
     }

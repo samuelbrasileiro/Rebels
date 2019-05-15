@@ -28,20 +28,31 @@ class Player{
     var name: String
     private var team: Troop
     var vote: Bool
+    var selected: Bool
     var image: UIImage?
     init(){
         self.name  = "default"
         self.team  = .none
         self.vote  = false
+        self.selected = false
     }
     init(name: String, image: UIImage){
         self.name  = name
         self.image = image
         self.team  = .none
         self.vote  = false
+        self.selected = false
     }
     func setTeam(team: Troop){
         self.team = team
+    }
+    func changeSelection(){
+        if self.selected == true{
+            self.selected = false
+        }
+        else{
+            self.selected = true
+        }
     }
     func getTeam()->Troop{return self.team}
 }

@@ -25,6 +25,7 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.bounces = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
         playSound(name: "EndorTheme")
         players = [ Player(name: "Samuel1", image: UIImage(named: "photo1")!),
@@ -36,6 +37,10 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         navigationController?.navigationBar.tintColor = .yellow
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        addStartButton()
+        
+    }
+    func addStartButton(){
         startButton.frame = CGRect(origin: CGPoint(x: self.view.frame.width/2 - 60, y: self.view.frame.height - 120),size: CGSize(width: 120, height: 40))
         startButton.setTitle("Começar Jogo", for: .normal)
         startButton.setTitleColor(.black, for: .normal)
@@ -44,19 +49,17 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         startButton.layer.masksToBounds = true
         startButton.addTarget(self, action: #selector(startGame(_:)), for: .touchUpInside)
         self.view.addSubview(startButton)
-        
     }
     @objc func startGame(_ sender: UIButton){
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowTeamNavigationController") as? UINavigationController{
             
-            //game = Game(players: players)
             game = Game(players: players)
-            //navigationController?.pushViewController(vc, animated: true)
-            closeSession = false
             present(vc, animated: true)
         }
         
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = true
         super.viewWillAppear(animated)
@@ -72,7 +75,6 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
 
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -99,27 +101,18 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         cell.nome.textColor = .yellow
         return cell
     }
-
-    override func collectionView(_ collectionView: UICollectionView,
-                                 shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        if playersIndexPath == indexPath {
-            playersIndexPath = nil
-            
-            if let vc = instantiateFromSuperclassStoryboard(type: 0, base: "BasePlayerViewController") as? EditPlayerViewController{
+    
+    
+        
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let vc = instantiateFromSuperclassStoryboard(type: 0, base: "BasePlayerViewController") as? EditPlayerViewController{
                 vc.player = players[indexPath.row]
                 vc.index = indexPath.row
-                
                 navigationController?.pushViewController(vc, animated: true)
-                
-                playersIndexPath = nil
-            }
-
-        } else {
-            playersIndexPath = indexPath
         }
-        
-        return false
     }
+        
+    
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -147,30 +140,6 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
     override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let temp = players.remove(at: sourceIndexPath.row)
         players.insert(temp, at: destinationIndexPath.row)
-    }
-    
-    var playersIndexPath: IndexPath? {
-        didSet {
-            var indexPaths: [IndexPath] = []
-            if let playersIndexPath = playersIndexPath {
-                indexPaths.append(playersIndexPath)
-            }
-            
-            if let oldValue = oldValue {
-                indexPaths.append(oldValue)
-            }
-
-            collectionView.performBatchUpdates({
-                self.collectionView.reloadItems(at: indexPaths)
-            }) { _ in
-
-                if let playersIndexPath = self.playersIndexPath {
-                    self.collectionView.scrollToItem(at: playersIndexPath,
-                                                     at: .centeredVertically,
-                                                     animated: true)
-                }
-            }
-        }
     }
     
     

@@ -22,7 +22,7 @@ class BaseGameViewController: UIViewController {
     @objc func exitAlert(){
         let actionSheet = UIAlertController(title: "Deseja parar este jogo?", message: nil, preferredStyle: .alert)
         let stop = UIAlertAction(title: "Parar", style: .default, handler: {(action:UIAlertAction) in
-            
+            game?.clear()
             self.dismiss(animated: true)
             
         })
