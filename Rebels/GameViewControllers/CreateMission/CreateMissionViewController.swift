@@ -18,8 +18,7 @@ class CreateMissionViewController: BaseGameViewController {
     var backgroundPlayer: AVPlayer?
     @IBOutlet weak var backgroundVideo: UIView!
     
-    var mission: Mission?
-    
+    var voteView: VoteMissionView?
     
     private let sectionInsets = UIEdgeInsets(top:   50.0,   left: 20.0,
                                              bottom:50.0,   right: 20.0)
@@ -30,6 +29,10 @@ class CreateMissionViewController: BaseGameViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        voteView = VoteMissionView(frame: collection.frame)
+        voteView!.isHidden = true
+        self.view.addSubview(voteView!)
         collection.delegate = self
         collection.dataSource = self
         collection.allowsSelection = true
@@ -40,7 +43,6 @@ class CreateMissionViewController: BaseGameViewController {
         
         setupVideo()
         
-        mission = game?.getMission()
         
         addVoteButton()
         
@@ -53,28 +55,33 @@ class CreateMissionViewController: BaseGameViewController {
         voteButton.backgroundColor = .yellow
         voteButton.layer.cornerRadius = 5
         voteButton.layer.masksToBounds = true
-        voteButton.addTarget(self, action: #selector(startVote(_:)), for: .touchUpInside)
+        voteButton.addTarget(self, action: #selector(startVote), for: .touchUpInside)
         self.view.addSubview(voteButton)
     }
-    @objc func startVote(_ sender: UIButton){
-        //        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VoteMissionViewController") as? VoteMissionViewController{
-        //            navigationController?.pushViewController(vc, animated: true)
-                    
-        //        }
-        if collection.isHidden{
-            collection.isHidden = false
-            voteButton.isHidden = true
-        }
-        else{
-            collection.isHidden = true
-            voteButton.isHidden = false
-            collection.scrollsToTop = true
-            
-            collection.setContentOffset(CGPoint(x: 0, y: -20), animated: true)
-        }
+    @objc func startVote(){
+        
+        game?.missions[(game?.missionIndex)!].setPlayers(players: game!.setSelected())
+        
+        self.voteButton.isHidden = true
+        self.collection.isHidden = true
+        self.voteView!.isHidden = false
+        
+        
     }
     
-    
+    func checkEnd(){
+        if (game?.checkVotes())!{
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        else{
+            game?.clear()
+            collection.scrollsToTop = true
+            game?.changeLeader()
+            collection.reloadData()
+            self.collection.isHidden = false
+        }
+    }
     
 }
 
@@ -105,7 +112,7 @@ extension CreateMissionViewController: UICollectionViewDataSource, UICollectionV
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CreateMissionCollectionViewCell  else {
             fatalError("The dequeued cell is not an instance of PlayersTableViewCell.")
         }
-        let player = players[indexPath.row]
+        let player = (game?.players[indexPath.row])!
         
         cell.image.image = player.image
         cell.image.layer.cornerRadius = cell.image.frame.width / 2
@@ -171,7 +178,7 @@ extension CreateMissionViewController: UICollectionViewDataSource, UICollectionV
             header.image.image = game!.getLeader().image
             
             header.leaderName.text = game!.getLeader().name
-            header.numberImage.image = mission?.missionImage()
+            header.numberImage.image = game!.missions[game!.missionIndex].missionImage()
             
             return header
         default:

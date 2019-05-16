@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E08FE0B228DEE1700AC9707 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08FE0A228DEE1700AC9707 /* GameViewController.swift */; };
 		7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */; };
 		7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */; };
 		7E75F6DD22835BE8002A6B3F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6DC22835BE8002A6B3F /* Game.swift */; };
@@ -26,6 +27,7 @@
 		7E9754A2228B56F700D9B8A9 /* CreateMissionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9754A1228B56F700D9B8A9 /* CreateMissionCollectionReusableView.swift */; };
 		7E9754A4228B654200D9B8A9 /* CreateMissionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9754A3228B654200D9B8A9 /* CreateMissionCollectionViewCell.swift */; };
 		7E9754A7228B940800D9B8A9 /* VoteMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9754A6228B940800D9B8A9 /* VoteMissionViewController.swift */; };
+		7E9754AB228B9DA400D9B8A9 /* VoteMissionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9754AA228B9DA400D9B8A9 /* VoteMissionView.xib */; };
 		7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */; };
 		7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E332227F7D5D000DD7EE /* Main.storyboard */; };
 		7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E335227F7D5D000DD7EE /* Rebels.xcdatamodeld */; };
@@ -35,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E08FE0A228DEE1700AC9707 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewController.swift; sourceTree = "<group>"; };
 		7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E75F6DC22835BE8002A6B3F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		7E9754A1228B56F700D9B8A9 /* CreateMissionCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMissionCollectionReusableView.swift; sourceTree = "<group>"; };
 		7E9754A3228B654200D9B8A9 /* CreateMissionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMissionCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E9754A6228B940800D9B8A9 /* VoteMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VoteMissionViewController.swift; path = Rebels/GameViewControllers/VoteMissionViewController.swift; sourceTree = SOURCE_ROOT; };
+		7E9754AA228B9DA400D9B8A9 /* VoteMissionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoteMissionView.xib; sourceTree = "<group>"; };
 		7EB5E32B227F7D5D000DD7EE /* Rebels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB5E32E227F7D5D000DD7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB5E333227F7D5D000DD7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			children = (
 				7E97547C2284B56000D9B8A9 /* ShowTeamViewController.swift */,
 				7E9754A6228B940800D9B8A9 /* VoteMissionViewController.swift */,
+				7E9754AA228B9DA400D9B8A9 /* VoteMissionView.xib */,
+				7E08FE0A228DEE1700AC9707 /* GameViewController.swift */,
 				7E9754A5228B654D00D9B8A9 /* CreateMission */,
 				7E97547E2285E6F000D9B8A9 /* BaseGameViewController.swift */,
 			);
@@ -247,6 +253,7 @@
 				7EB5E339227F7D5E000DD7EE /* Assets.xcassets in Resources */,
 				7E97549A22872E7F00D9B8A9 /* starsVideoBackground.mov in Resources */,
 				7EB5E334227F7D5D000DD7EE /* Main.storyboard in Resources */,
+				7E9754AB228B9DA400D9B8A9 /* VoteMissionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +272,7 @@
 				7E9754A7228B940800D9B8A9 /* VoteMissionViewController.swift in Sources */,
 				7E97547B228483FE00D9B8A9 /* CreateMissionViewController.swift in Sources */,
 				7E97548A2285F4CC00D9B8A9 /* EditPlayerViewController.swift in Sources */,
+				7E08FE0B228DEE1700AC9707 /* GameViewController.swift in Sources */,
 				7E97547F2285E6F000D9B8A9 /* BaseGameViewController.swift in Sources */,
 				7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */,
 				7E9754A4228B654200D9B8A9 /* CreateMissionCollectionViewCell.swift in Sources */,

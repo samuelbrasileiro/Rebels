@@ -172,6 +172,7 @@ class ShowTeamViewController: BaseGameViewController {
         showRoleButton.setTitle("MOSTRAR O PAPEL", for: .normal)
         showRoleButton.setTitleColor(.black, for: .normal)
         showRoleButton.isHidden = true
+        
         self.view.addSubview(showRoleButton)
     }
     

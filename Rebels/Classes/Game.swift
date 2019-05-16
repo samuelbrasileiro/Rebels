@@ -76,7 +76,15 @@ class Game{
             players[index].selected = false
         }
     }
-    
+    func setSelected() -> [Player] {
+        var selected = [Player]()
+        for i in 0..<numberOfPlayers{
+            if players[i].selected{
+                selected.append(players[i])
+            }
+        }
+        return selected
+    }
     func getLeader()->Player{
         return players[leader]
     }
@@ -119,7 +127,22 @@ class Game{
             self.leader = 0
         }
     }
+    
+    func checkVotes() -> Bool {
+        var votes: Int = 0
+        for i in 0..<numberOfPlayers{
+            if players[i].vote{
+                votes += 1
+            }
+        }
+        if votes >= Int(ceil(Double(numberOfPlayers) / 2)){
+            return true
+        }
+        return false
+    }
+    
     func clear(){
+        self.numberOfSelected = 0
         for i in 0..<players.count{
             players[i].selected = false
             players[i].vote = false
