@@ -169,8 +169,12 @@ extension CreateMissionViewController: UICollectionViewDataSource, UICollectionV
                 else {
                     fatalError("Invalid view type")
             }
-            header.missionTitle.text = game?.missionTitle()
             
+            //header.backgroundColor = UIColor.black.withAlphaComponent(1)
+            header.missionTitle.text = game?.missionTitle()
+            //if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            //    layout.sectionHeadersPinToVisibleBounds = true
+            //}
             header.image.layer.cornerRadius = header.image.frame.width / 2
             header.image.layer.masksToBounds = true
             header.image.contentMode = .scaleAspectFill
@@ -179,6 +183,7 @@ extension CreateMissionViewController: UICollectionViewDataSource, UICollectionV
             
             header.leaderName.text = game!.getLeader().name
             header.numberImage.image = game!.missions[game!.missionIndex].missionImage()
+            
             
             return header
         default:

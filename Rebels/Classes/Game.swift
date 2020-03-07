@@ -120,8 +120,10 @@ class Game{
         self.leader = leader
     }
     func changeLeader(){
-        if(self.leader < players.count){
+        if(self.leader < players.count - 1){
             self.leader += 1
+            print(self.players[0])
+            print("lider é" + getLeader().name)
         }
         else{
             self.leader = 0

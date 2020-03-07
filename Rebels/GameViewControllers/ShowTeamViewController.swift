@@ -49,7 +49,10 @@ class ShowTeamViewController: BaseGameViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //TODO:- TIRAR
+        //TIRAR AQ
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
+        self.navigationController?.pushViewController(vc, animated: false)
         self.playerIndex = 0
         
         
@@ -78,6 +81,8 @@ class ShowTeamViewController: BaseGameViewController {
         self.instruction.text = "Entregue o dispositivo para este(a) jogador(a). Selecione o perfil quando estiver pronto."
         
         addShowRoleButton()
+        
+        waitPlayer(index: self.playerIndex!)
         waitPlayer(index: self.playerIndex!)
     }
 
@@ -110,6 +115,7 @@ class ShowTeamViewController: BaseGameViewController {
             showRoleButton.isHidden = true
             showRoleButton.setTitle("MOSTRAR PAPEL", for: .normal)
             waitPlayer(index: self.playerIndex!)
+            
         }
         
         showRoleButtonPhase.exchange()
@@ -147,6 +153,10 @@ class ShowTeamViewController: BaseGameViewController {
         
     }
     func waitPlayer(index: Int){
+        imageBorder.isHidden = true
+        button.isHidden = false
+        button.isUserInteractionEnabled = true
+        showRoleButton.setTitle("MOSTRAR PAPEL", for: .normal)
         self.button.setImage(UIImage(named: "yellowClick")!, for: .normal)
         self.button.alpha = 0
         self.showRoleButton.setTitle("MOSTRAR PAPEL", for: .normal)

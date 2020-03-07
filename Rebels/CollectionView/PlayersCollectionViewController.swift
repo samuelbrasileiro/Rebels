@@ -51,7 +51,21 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         self.view.addSubview(startButton)
     }
     @objc func startGame(_ sender: UIButton){
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowTeamNavigationController") as? UINavigationController{
+        if players.count < 5{
+            let alert = UIAlertController(title: "Atenção", message: "É necessário, no mínimo, de cinco jogadores para uma partida", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            action.setValue(UIColor.yellow, forKey: "titleTextColor")
+            self.present(alert, animated: true)
+        }
+        else if players.count > 10{
+            let alert = UIAlertController(title: "Atenção", message: "O máximo são dez jogadores em uma única partida", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Parar", style: .cancel, handler: nil)
+            alert.addAction(action)
+            action.setValue(UIColor.yellow, forKey: "titleTextColor")
+            self.present(alert, animated: true)
+        }
+        else if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowTeamNavigationController") as? UINavigationController{
             
             game = Game(players: players)
             present(vc, animated: true)
