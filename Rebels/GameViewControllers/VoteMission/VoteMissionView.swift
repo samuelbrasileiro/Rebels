@@ -46,6 +46,7 @@ class VoteMissionView: UIView {
     
     @IBOutlet var acceptButton: UIButton!
     
+    @IBOutlet var selectedView: UIView!
     
     
     var viewing: Int?{
@@ -62,7 +63,9 @@ class VoteMissionView: UIView {
                 changeStack()
             }
             else{
-                
+                for view in selectedView.subviews{
+                    view.removeFromSuperview()
+                }
             }
         }
     }
@@ -74,7 +77,7 @@ class VoteMissionView: UIView {
             let player = game?.getMission().players[i]
            print(player!.name)
             
-            self.contentView.addSubview(participantView(frame: CGRect(x: 87, y: 300 + 70*i, width: 200, height: 60), name: player!.name, image: player!.image!))
+            self.selectedView.addSubview(participantView(frame: CGRect(x: 0, y: 70*i, width: 200, height: 60), name: player!.name, image: player!.image!))
             
             
             
@@ -91,16 +94,13 @@ class VoteMissionView: UIView {
         self.addSubview(contentView)
         self.contentView.backgroundColor = .clear
         viewing = 0
-        print("ala o " + (game?.players[viewing!].name)!)
         
         //var views = [participantView]()
         self.name.textColor = .yellow
         self.name.backgroundColor = .clear
 
         
-        
-        //stack!.removeAllArrangedSubviews()
-        
+        self.selectedView.backgroundColor = .clear
         
         self.addButtons()
     }

@@ -43,16 +43,19 @@ class ShowTeamViewController: BaseGameViewController {
     
     var playerIndex: Int?
     
+    @IBOutlet var spiesLabel: UILabel!
+    
     var showRoleButtonPhase = Phase()
     
     var showRoleButton = UIButton()
 
+    @IBOutlet var selectedView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO:- TIRAR
         //TIRAR AQ
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
-        self.navigationController?.pushViewController(vc, animated: false)
+        
         self.playerIndex = 0
         
         
@@ -76,6 +79,9 @@ class ShowTeamViewController: BaseGameViewController {
         self.name.text = game?.players[playerIndex!].name
         self.team.text = nil
         
+        self.spiesLabel.text = "Os rebeldes são:"
+        self.spiesLabel.isHidden = true
+        
         button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
         
         self.instruction.text = "Entregue o dispositivo para este(a) jogador(a). Selecione o perfil quando estiver pronto."
@@ -89,6 +95,7 @@ class ShowTeamViewController: BaseGameViewController {
     
     //When the Photo is pressed
     @objc func buttonAction(_ sender: UIButton){
+        
         showRoleButton.isHidden = false
         imageBorder.isHidden = false
         button.isHidden = true
@@ -96,9 +103,16 @@ class ShowTeamViewController: BaseGameViewController {
         
     }
     
+    
+    
+    
+    
+    
+    
     //When the Show Role / OK button is pressed
     @objc func showRoleButtonAction(_ sender: UIButton){
         //Show role is pressed
+        
         if(showRoleButtonPhase == .first){
             imageBorder.isHidden = true
             button.isHidden = false
@@ -128,6 +142,30 @@ class ShowTeamViewController: BaseGameViewController {
         self.button.setImage(UIImage(named: (game?.players[index].getTeam().rawValue)!)!, for: .normal)
         self.button.alpha = 0
         
+        if(game?.players[index].getTeam() == .empire){
+            
+            
+            
+            
+        }
+        else{
+            self.spiesLabel.isHidden = false
+            var spies: [Player] = []
+            for player in game!.players{
+                if player.getTeam() == .rebel{
+                    spies.append(player)
+                }
+            }
+            for i in 0..<spies.count{
+                if i < 2{
+                    self.selectedView.addSubview(participantView(frame: CGRect(x: 0, y: 70*i, width: 200, height: 60), name: spies[i].name, image: spies[i].image!))
+                }
+                else{
+                    self.selectedView.addSubview(participantView(frame: CGRect(x: 200, y: 70*(i-2), width: 200, height: 60), name: spies[i].name, image: spies[i].image!))
+                }
+            }
+        }
+        
         UIView.animate(withDuration: 2.0, delay: 0, options: [.autoreverse, .repeat], animations: {
             
             self.button.alpha = 1
@@ -136,6 +174,7 @@ class ShowTeamViewController: BaseGameViewController {
             }
             else{
                 self.button.tintColor = UIColor(red: 0.5, green: 0, blue: 0, alpha: 0.5)
+                
             }
         })
         self.button.backgroundColor = .clear
@@ -187,8 +226,12 @@ class ShowTeamViewController: BaseGameViewController {
     }
     
     func checkEnd()->Bool{
+        self.spiesLabel.isHidden = true
+        for view in self.selectedView.subviews{
+            view.removeFromSuperview()
+        }
         if(self.playerIndex! == game!.numberOfPlayers){
-            
+        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
         self.navigationController?.pushViewController(vc, animated: false)
             return true

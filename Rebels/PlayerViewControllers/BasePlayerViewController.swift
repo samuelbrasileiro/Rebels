@@ -37,9 +37,6 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
     override func viewDidLoad(){
         super.viewDidLoad()
         nome.delegate = self
-        self.image.layer.cornerRadius = self.image.bounds.width / 2
-        
-        self.image.layer.masksToBounds = true
     }
        
     
@@ -83,6 +80,11 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
             print("Nenhuma imagem encontrada")
             return
         }
+        
+        self.image.layer.cornerRadius = self.image.bounds.width / 2
+        
+        self.image.layer.masksToBounds = true
+        
         self.image.image = image
         
     }

@@ -65,8 +65,9 @@ class CreateMissionViewController: BaseGameViewController {
         self.voteButton.isHidden = true
         self.collection.isHidden = true
         self.voteView!.isHidden = false
-        
-        
+        collection.setContentOffset(CGPoint.zero, animated: false)
+
+
     }
     
     func checkEnd(){

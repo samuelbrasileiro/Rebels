@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Game{
     var numberOfPlayers: Int
@@ -149,6 +150,19 @@ class Game{
             players[i].selected = false
             players[i].vote = false
         }
+    }
+    func missionsColorArray()->[UIColor]{
+        var colorArray: [UIColor] = [.clear,.clear,.clear,.clear,.clear]
+        for index in 0..<missionIndex{
+            if missions[index].winner == .rebel{
+                colorArray[index] = .red
+            }
+            else if missions[index].winner == .empire{
+                colorArray[index] = .blue
+            }
+        }
+        
+        return colorArray
     }
     
 }

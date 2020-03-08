@@ -16,13 +16,14 @@ class Mission{
     var winner: Troop
     var twoSpiesToFail: Bool
     var voteCounter: Int
-    
+    var numberOfFails: Int
     init(_ numberOfPlayers: Int) {
         self.numberOfPlayers = numberOfPlayers
         self.completed = false
         self.twoSpiesToFail = false
         self.winner = .none
-        self.voteCounter = 0;
+        self.voteCounter = 0
+        self.numberOfFails = 0
     }
     init(_ numberOfPlayers: Int, twoSpiesToFail: Bool) {
         self.numberOfPlayers = numberOfPlayers
@@ -30,6 +31,7 @@ class Mission{
         self.twoSpiesToFail = twoSpiesToFail
         self.winner = .none
         self.voteCounter = 0;
+        self.numberOfFails = 0;
     }
     func setPlayers(players: [Player]){
         self.players = players
