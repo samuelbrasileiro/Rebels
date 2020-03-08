@@ -34,6 +34,9 @@
 		7EB5E33C227F7D5E000DD7EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB5E33A227F7D5E000DD7EE /* LaunchScreen.storyboard */; };
 		7EB5E34C227FD900000DD7EE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5E34B227FD900000DD7EE /* Player.swift */; };
 		7EEFA64E24133292009BB7C7 /* VoteMissionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EEFA64D24133292009BB7C7 /* VoteMissionView.xib */; };
+		7EEFA65324155F9E009BB7C7 /* resultMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEFA65224155F9E009BB7C7 /* resultMissionViewController.swift */; };
+		7EEFA65524157E01009BB7C7 /* endGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEFA65424157E01009BB7C7 /* endGameViewController.swift */; };
+		7EEFA65724158859009BB7C7 /* prepareResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEFA65624158859009BB7C7 /* prepareResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		7EB5E33D227F7D5E000DD7EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EB5E34B227FD900000DD7EE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		7EEFA64D24133292009BB7C7 /* VoteMissionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VoteMissionView.xib; path = Rebels/GameViewControllers/VoteMission/VoteMissionView.xib; sourceTree = SOURCE_ROOT; };
+		7EEFA65224155F9E009BB7C7 /* resultMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultMissionViewController.swift; sourceTree = "<group>"; };
+		7EEFA65424157E01009BB7C7 /* endGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = endGameViewController.swift; sourceTree = "<group>"; };
+		7EEFA65624158859009BB7C7 /* prepareResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prepareResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +112,12 @@
 			children = (
 				7E97547C2284B56000D9B8A9 /* ShowTeamViewController.swift */,
 				7E08FE0A228DEE1700AC9707 /* PlayMissionViewController.swift */,
+				7EEFA65224155F9E009BB7C7 /* resultMissionViewController.swift */,
+				7EEFA65624158859009BB7C7 /* prepareResultViewController.swift */,
 				7EEFA64F241349F8009BB7C7 /* VoteMission */,
 				7E9754A5228B654D00D9B8A9 /* CreateMission */,
 				7E97547E2285E6F000D9B8A9 /* BaseGameViewController.swift */,
+				7EEFA65424157E01009BB7C7 /* endGameViewController.swift */,
 			);
 			path = GameViewControllers;
 			sourceTree = "<group>";
@@ -272,15 +281,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EEFA65324155F9E009BB7C7 /* resultMissionViewController.swift in Sources */,
 				7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */,
 				7E9754752283C9F500D9B8A9 /* Sound.swift in Sources */,
 				7E75F6DD22835BE8002A6B3F /* Game.swift in Sources */,
 				7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */,
+				7EEFA65724158859009BB7C7 /* prepareResultViewController.swift in Sources */,
 				7E97547D2284B56000D9B8A9 /* ShowTeamViewController.swift in Sources */,
 				7E9754A7228B940800D9B8A9 /* VoteMissionView.swift in Sources */,
 				7E97547B228483FE00D9B8A9 /* CreateMissionViewController.swift in Sources */,
 				7E97548A2285F4CC00D9B8A9 /* EditPlayerViewController.swift in Sources */,
 				7E08FE0B228DEE1700AC9707 /* PlayMissionViewController.swift in Sources */,
+				7EEFA65524157E01009BB7C7 /* endGameViewController.swift in Sources */,
 				7E97547F2285E6F000D9B8A9 /* BaseGameViewController.swift in Sources */,
 				7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */,
 				7E9754A4228B654200D9B8A9 /* CreateMissionCollectionViewCell.swift in Sources */,

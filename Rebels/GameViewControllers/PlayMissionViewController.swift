@@ -26,9 +26,10 @@ class PlayMissionViewController: BaseGameViewController {
     
     var showActionButtonPhase = Phase()
     
-    var showActionButton = UIButton()
+    @IBOutlet var showActionButton: UIButton!
     
-    var sabotageButton = UIButton()
+    @IBOutlet var sabotageButton: UIButton!
+    
     
     var missionPlayers: [Player] = []
     
@@ -160,9 +161,7 @@ class PlayMissionViewController: BaseGameViewController {
     }
     
     func addshowActionButton(){
-        showActionButton = UIButton(frame: CGRect(
-            x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 180,
-            width: 200, height: 40))
+        //showActionButton = UIButton(frame: CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 180, width: 200, height: 40))
         
         showActionButton.addTarget(self, action: #selector(showActionButtonAction(_:)), for: .touchUpInside)
         showActionButton.backgroundColor = .yellow
@@ -172,13 +171,11 @@ class PlayMissionViewController: BaseGameViewController {
         showActionButton.setTitleColor(.black, for: .normal)
         showActionButton.isHidden = true
         
-        self.view.addSubview(showActionButton)
+        //self.view.addSubview(showActionButton)
     }
     
     func addSabotageButton(){
-        sabotageButton = UIButton(frame: CGRect(
-            x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 260,
-            width: 200, height: 40))
+        //sabotageButton = UIButton(frame: CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 260, width: 200, height: 40))
         
         sabotageButton.addTarget(self, action: #selector(sabotageButtonAction(_:)), for: .touchUpInside)
         sabotageButton.backgroundColor = .yellow
@@ -188,14 +185,13 @@ class PlayMissionViewController: BaseGameViewController {
         sabotageButton.setTitleColor(.black, for: .normal)
         sabotageButton.isHidden = true
         
-        self.view.addSubview(sabotageButton)
+        //self.view.addSubview(sabotageButton)
     }
     
     func checkEnd()->Bool{
         if(self.playerIndex! == game!.getMission().numberOfPlayers){
-            game?.setWinner()
-            game?.clear()
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
+           
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "prepareResultMissionViewController")
             self.navigationController?.pushViewController(vc, animated: true)
             return true
         }

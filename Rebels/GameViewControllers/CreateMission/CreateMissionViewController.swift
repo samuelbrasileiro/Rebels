@@ -31,7 +31,7 @@ class CreateMissionViewController: BaseGameViewController {
         super.viewDidLoad()
         
         self.setTitle(title: "")
-        voteView = VoteMissionView(frame: collection.frame)
+        voteView = VoteMissionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         voteView!.isHidden = true
         self.view.addSubview(voteView!)
         collection.delegate = self

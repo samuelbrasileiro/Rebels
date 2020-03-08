@@ -47,16 +47,16 @@ class ShowTeamViewController: BaseGameViewController {
     
     var showRoleButtonPhase = Phase()
     
-    var showRoleButton = UIButton()
-
     @IBOutlet var selectedView: UIView!
+    
+    @IBOutlet var showRoleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO:- TIRAR
         //TIRAR AQ
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
-        self.navigationController?.pushViewController(vc, animated: false)
+        //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
+        //self.navigationController?.pushViewController(vc, animated: false)
         
         self.playerIndex = 0
         
@@ -215,9 +215,6 @@ class ShowTeamViewController: BaseGameViewController {
     }
     
     func addShowRoleButton(){
-        showRoleButton = UIButton(frame: CGRect(
-            x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 180,
-            width: 200, height: 40))
         
         showRoleButton.addTarget(self, action: #selector(showRoleButtonAction(_:)), for: .touchUpInside)
         showRoleButton.backgroundColor = .yellow
@@ -228,7 +225,6 @@ class ShowTeamViewController: BaseGameViewController {
         showRoleButton.layer.cornerRadius = 5
         showRoleButton.layer.masksToBounds = true
         
-        self.view.addSubview(showRoleButton)
     }
     
     func checkEnd()->Bool{

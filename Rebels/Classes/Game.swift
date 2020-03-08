@@ -17,12 +17,14 @@ class Game{
     var missionIndex: Int
     var leader: Int
     var numberOfSelected: Int
+    var winner: Troop
     init(players: [Player]){
         self.numberOfPlayers = players.count
         self.players = players
         self.missionIndex = 0
         self.leader = 0
         self.numberOfSelected = 0
+        self.winner = .none
         for i in 0..<self.numberOfPlayers{
             players[i].setTeam(team: .empire)
         }
@@ -100,15 +102,38 @@ class Game{
         }
         print(missions[missionIndex].numberOfFails)
         if missions[missionIndex].numberOfFails >= spiesToFail{
-            print("LALALAND")
             missions[missionIndex].winner = .rebel
         }
         else{
             missions[missionIndex].winner = .empire
         }
+        
+    }
+    func nextMission(){
         if missionIndex < 4{
             missionIndex += 1
         }
+    }
+    func didGameEnd() -> Bool {
+        var winsOfEmpire = 0
+        var winsOfRebel = 0
+        for mission in missions {
+            if mission.winner == .empire{
+                winsOfEmpire += 1
+            }
+            else if mission.winner == .rebel{
+                winsOfRebel += 1
+            }
+        }
+        if winsOfEmpire >= 3{
+            winner = .empire
+            return true
+        }
+        else if winsOfRebel >= 3{
+            winner = .rebel
+            return true
+        }
+        return false
     }
     func missionTitle()->String{
         var title: String
@@ -150,6 +175,9 @@ class Game{
             self.leader = 0
         }
     }
+    func getNumberOfPlayersOfMission(number: Int) -> Int{
+        return missions[number].numberOfPlayers
+    }
     
     func checkVotes() -> Bool {
         var votes: Int = 0
@@ -173,7 +201,7 @@ class Game{
     }
     func missionsColorArray()->[UIColor]{
         var colorArray: [UIColor] = [.clear,.clear,.clear,.clear,.clear]
-        for index in 0..<missionIndex{
+        for index in 0..<5{
             if missions[index].winner == .rebel{
                 colorArray[index] = .red
             }
