@@ -55,7 +55,8 @@ class ShowTeamViewController: BaseGameViewController {
         super.viewDidLoad()
         //TODO:- TIRAR
         //TIRAR AQ
-        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
+        self.navigationController?.pushViewController(vc, animated: false)
         self.playerIndex = 0
         
         

@@ -151,7 +151,7 @@ class GameViewController: BaseGameViewController {
     
     func checkEnd()->Bool{
         if(self.playerIndex! == game!.getMission().numberOfPlayers){
-            
+            game?.clear()
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
             self.navigationController?.pushViewController(vc, animated: false)
             return true

@@ -11,7 +11,7 @@ import UIKit
 class CreateMissionCollectionReusableView: UICollectionReusableView {
     @IBOutlet var missionTitle: UILabel!
     @IBOutlet var leaderName: UILabel!
-    @IBOutlet var numberImage: UIImageView!
+    @IBOutlet var selectText: UILabel!
     @IBOutlet var image: UIImageView!
     
 }

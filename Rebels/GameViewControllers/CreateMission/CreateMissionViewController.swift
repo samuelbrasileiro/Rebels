@@ -29,7 +29,7 @@ class CreateMissionViewController: BaseGameViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        print("HAHA")
         voteView = VoteMissionView(frame: collection.frame)
         voteView!.isHidden = true
         self.view.addSubview(voteView!)
@@ -186,7 +186,7 @@ extension CreateMissionViewController: UICollectionViewDataSource, UICollectionV
             header.image.image = game!.getLeader().image
             
             header.leaderName.text = game!.getLeader().name
-            header.numberImage.image = game!.missions[game!.missionIndex].missionImage()
+            header.selectText.text = "Selecione \(game!.getMission().numberOfPlayers) recrutas para esta missão:"
             
             
             return header
