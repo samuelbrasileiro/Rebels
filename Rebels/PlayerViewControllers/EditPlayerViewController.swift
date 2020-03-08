@@ -32,16 +32,26 @@ class EditPlayerViewController: BasePlayerViewController {
     }
     
     @objc func save() {
-        if(nome.text == ""){
-            let alert = UIAlertController(title: "Atenção", message: "É necessário que o jogador tenha um nome e uma foto.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(action)
-            action.setValue(UIColor.yellow, forKey: "titleTextColor")
-            self.present(alert, animated: true)
+        if nome.text == ""{
+            createAndShowAlert(message: "É necessário que o jogador tenha um nome e uma foto.")
+            
         }
+        
         else{
-            players[index!] = Player(name: self.nome.text ?? player.name, image: self.image.image ?? player.image!)
-            navigationController?.popViewController(animated: true)
+            //LEMBRAR DE REFAZER
+            var nameExists = false
+            for player in players{
+                if self.nome.text == player.name && players[index!].name != player.name{
+                    nameExists = true
+                }
+            }
+            if nameExists{
+                 createAndShowAlert(message: "Já existe um jogador com este nome, escolha outro.")
+            }
+            else{
+                players[index!] = Player(name: self.nome.text ?? player.name, image: self.image.image ?? player.image!)
+                navigationController?.popViewController(animated: true)
+            }
         }
         
     }

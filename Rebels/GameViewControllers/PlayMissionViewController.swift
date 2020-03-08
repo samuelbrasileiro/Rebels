@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  PlayMissionViewController.swift
 //  Rebels
 //
 //  Created by Samuel on 16/05/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: BaseGameViewController {
+class PlayMissionViewController: BaseGameViewController {
     
     @IBOutlet var missionTitle: UILabel!
     

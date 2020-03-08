@@ -23,16 +23,24 @@ class NewPlayerViewController: BasePlayerViewController {
     
     @objc func add() {
         if(self.nome.text == "" ||  !didChangeImage!){
-            let alert = UIAlertController(title: "Atenção", message: "É necessário que o jogador tenha um nome e uma foto.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(action)
-            action.setValue(UIColor.yellow, forKey: "titleTextColor")
-            self.present(alert, animated: true)
+             createAndShowAlert(message: "É necessário que o jogador tenha um nome e uma foto.")
         }
         else{
-            let newPlayer = Player(name: self.nome.text ?? "", image: self.image.image!)
-            players.append(newPlayer)
-            navigationController?.popViewController(animated: true)
+            //LEMBRAR DE REFAZER
+            var nameExists = false
+            for player in players{
+                if self.nome.text == player.name{
+                    nameExists = true
+                }
+            }
+            if nameExists{
+                 createAndShowAlert(message: "Já existe um jogador com este nome, escolha outro.")
+            }
+            else{
+                let newPlayer = Player(name: self.nome.text ?? "", image: self.image.image!)
+                players.append(newPlayer)
+                navigationController?.popViewController(animated: true)
+            }
         }
     }
     

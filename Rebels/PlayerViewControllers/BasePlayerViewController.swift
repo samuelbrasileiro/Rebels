@@ -94,7 +94,13 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
         
     }
     
-    
+    func createAndShowAlert(message: String){
+        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        action.setValue(UIColor.yellow, forKey: "titleTextColor")
+        self.present(alert, animated: true)
+    }
 
     
 }
