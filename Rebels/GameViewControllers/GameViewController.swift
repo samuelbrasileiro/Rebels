@@ -23,9 +23,9 @@ class GameViewController: BaseGameViewController {
     
     var playerIndex: Int?
     
-    var showRoleButtonPhase = Phase()
+    var showActionButtonPhase = Phase()
     
-    var showRoleButton = UIButton()
+    var showActionButton = UIButton()
     
     var missionPlayers: [Player] = []
     
@@ -59,7 +59,7 @@ class GameViewController: BaseGameViewController {
         
         self.instruction.text = "Entregue o dispositivo para este(a) jogador(a). Selecione o perfil quando estiver pronto."
         
-        addShowRoleButton()
+        addshowActionButton()
         
         waitPlayer(index: self.playerIndex!)
         waitPlayer(index: self.playerIndex!)
@@ -68,7 +68,7 @@ class GameViewController: BaseGameViewController {
     
     //When the Photo is pressed
     @objc func buttonAction(_ sender: UIButton){
-        showRoleButton.isHidden = false
+        showActionButton.isHidden = false
         imageBorder.isHidden = false
         button.isHidden = true
         button.isUserInteractionEnabled = false
@@ -76,9 +76,9 @@ class GameViewController: BaseGameViewController {
     }
     
     //When the Show Role / OK button is pressed
-    @objc func showRoleButtonAction(_ sender: UIButton){
+    @objc func showActionButtonAction(_ sender: UIButton){
         //Show role is pressed
-        if(showRoleButtonPhase == .first){
+        if(showActionButtonPhase == .first){
             imageBorder.isHidden = true
             button.isHidden = false
             button.isUserInteractionEnabled = false
@@ -91,13 +91,13 @@ class GameViewController: BaseGameViewController {
             imageBorder.isHidden = true
             button.isHidden = false
             button.isUserInteractionEnabled = true
-            showRoleButton.isHidden = true
-            showRoleButton.setTitle("COMEÇAR", for: .normal)
+            showActionButton.isHidden = true
+            showActionButton.setTitle("COMEÇAR", for: .normal)
             waitPlayer(index: self.playerIndex!)
             
         }
         
-        showRoleButtonPhase.exchange()
+        showActionButtonPhase.exchange()
     }
     
     func changeAction(index: Int){
@@ -107,7 +107,7 @@ class GameViewController: BaseGameViewController {
         self.name.text = missionPlayers[index].name
         self.image.image = missionPlayers[index].image
         
-        self.showRoleButton.setTitle("OK", for: .normal)
+        self.showActionButton.setTitle("OK", for: .normal)
         
         
         self.playerIndex = self.playerIndex! + 1
@@ -117,10 +117,10 @@ class GameViewController: BaseGameViewController {
         imageBorder.isHidden = true
         button.isHidden = false
         button.isUserInteractionEnabled = true
-        showRoleButton.setTitle("COMEÇAR", for: .normal)
+        showActionButton.setTitle("COMEÇAR", for: .normal)
         self.button.setImage(UIImage(named: "yellowClick")!, for: .normal)
         self.button.alpha = 0
-        self.showRoleButton.setTitle("COMEÇAR", for: .normal)
+        self.showActionButton.setTitle("COMEÇAR", for: .normal)
         UIView.animate(withDuration: 3.0, delay: 0, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
             self.button.backgroundColor = .white
             self.button.alpha = 1
@@ -133,18 +133,20 @@ class GameViewController: BaseGameViewController {
         self.instruction.text = "Entregue o dispositivo para este(a) jogador(a). Selecione o perfil quando estiver pronto."
     }
     
-    func addShowRoleButton(){
-        showRoleButton = UIButton(frame: CGRect(
+    func addshowActionButton(){
+        showActionButton = UIButton(frame: CGRect(
             x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 180,
             width: 200, height: 40))
         
-        showRoleButton.addTarget(self, action: #selector(showRoleButtonAction(_:)), for: .touchUpInside)
-        showRoleButton.backgroundColor = .yellow
-        showRoleButton.setTitle("COMEÇAR", for: .normal)
-        showRoleButton.setTitleColor(.black, for: .normal)
-        showRoleButton.isHidden = true
+        showActionButton.addTarget(self, action: #selector(showActionButtonAction(_:)), for: .touchUpInside)
+        showActionButton.backgroundColor = .yellow
+        showActionButton.setTitle("COMEÇAR", for: .normal)
+        showActionButton.layer.cornerRadius = 5
+        showActionButton.layer.masksToBounds = true
+        showActionButton.setTitleColor(.black, for: .normal)
+        showActionButton.isHidden = true
         
-        self.view.addSubview(showRoleButton)
+        self.view.addSubview(showActionButton)
     }
     
     func checkEnd()->Bool{

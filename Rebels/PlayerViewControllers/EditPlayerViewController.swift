@@ -21,6 +21,9 @@ class EditPlayerViewController: BasePlayerViewController {
         
         self.trashButton.addTarget(self, action: #selector(trash), for: .touchUpInside)
         
+        self.image.layer.cornerRadius = self.image.bounds.width / 2
+        self.image.contentMode = .scaleAspectFill
+        self.image.layer.masksToBounds = true        
     }
     
     @objc func trash() {

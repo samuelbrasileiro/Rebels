@@ -107,6 +107,8 @@ class VoteMissionView: UIView {
     func addButtons(){
         
         rejectButton.addTarget(self, action: #selector(reject), for: .touchUpInside)
+        rejectButton.layer.cornerRadius = 5
+        rejectButton.layer.masksToBounds = true
         rejectButton!.backgroundColor = .yellow
         rejectButton!.setTitle("Rejeitar", for: .normal)
         rejectButton!.setTitleColor(.black, for: .normal)
@@ -115,6 +117,8 @@ class VoteMissionView: UIView {
         acceptButton!.backgroundColor = .yellow
         acceptButton!.setTitle("Aceitar", for: .normal)
         acceptButton!.setTitleColor(.black, for: .normal)
+        acceptButton.layer.cornerRadius = 5
+        acceptButton.layer.masksToBounds = true
         
     }
     @objc func reject() {

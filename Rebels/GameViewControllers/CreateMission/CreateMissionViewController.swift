@@ -52,6 +52,9 @@ class CreateMissionViewController: BaseGameViewController {
         voteButton.isHidden = true
         voteButton.setTitle("Votar", for: .normal)
         voteButton.setTitleColor(.black, for: .normal)
+        voteButton.layer.cornerRadius = 5
+        voteButton.layer.masksToBounds = true
+        
         voteButton.backgroundColor = .yellow
         voteButton.layer.cornerRadius = 5
         voteButton.layer.masksToBounds = true

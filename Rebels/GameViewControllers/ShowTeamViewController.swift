@@ -222,6 +222,9 @@ class ShowTeamViewController: BaseGameViewController {
         showRoleButton.setTitleColor(.black, for: .normal)
         showRoleButton.isHidden = true
         
+        showRoleButton.layer.cornerRadius = 5
+        showRoleButton.layer.masksToBounds = true
+        
         self.view.addSubview(showRoleButton)
     }
     

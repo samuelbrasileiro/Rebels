@@ -34,9 +34,12 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
     
     @IBOutlet var trashButton: UIButton!
     
+    @IBOutlet var buttonOutlet: UIButton!
     override func viewDidLoad(){
         super.viewDidLoad()
         nome.delegate = self
+        buttonOutlet.layer.cornerRadius = 5
+        buttonOutlet.layer.masksToBounds = true
     }
        
     
@@ -84,7 +87,7 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
         self.image.layer.cornerRadius = self.image.bounds.width / 2
         
         self.image.layer.masksToBounds = true
-        
+        self.image.contentMode = .scaleAspectFill
         self.image.image = image
         
     }
