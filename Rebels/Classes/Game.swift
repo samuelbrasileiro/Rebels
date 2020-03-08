@@ -28,22 +28,22 @@ class Game{
         }
         switch self.numberOfPlayers {
         case 5:
-            self.missions = [Mission(2), Mission(2), Mission(3), Mission(3), Mission(3)]
+            self.missions = [Mission(2), Mission(3), Mission(2), Mission(3), Mission(3)]
             self.numberOfSpies = 2
         case 6:
-            self.missions = [Mission(2), Mission(3), Mission(3), Mission(4,twoSpiesToFail: true), Mission(4, twoSpiesToFail: true)]
+            self.missions = [Mission(2), Mission(3), Mission(4), Mission(3), Mission(4)]
             self.numberOfSpies = 2
         case 7:
-            self.missions = [Mission(2), Mission(3), Mission(3), Mission(4,twoSpiesToFail: true), Mission(4, twoSpiesToFail: true)]
+            self.missions = [Mission(2), Mission(3), Mission(3), Mission(4,twoSpiesToFail: true), Mission(4)]
             self.numberOfSpies = 3
         case 8:
-            self.missions = [Mission(3), Mission(4), Mission(4), Mission(5,twoSpiesToFail: true), Mission(5, twoSpiesToFail: true)]
+            self.missions = [Mission(3), Mission(4), Mission(4), Mission(5,twoSpiesToFail: true), Mission(5)]
             self.numberOfSpies = 3
         case 9:
-            self.missions = [Mission(3), Mission(4), Mission(4), Mission(5,twoSpiesToFail: true), Mission(5, twoSpiesToFail: true)]
+            self.missions = [Mission(3), Mission(4), Mission(4), Mission(5,twoSpiesToFail: true), Mission(5)]
             self.numberOfSpies = 3
         case 10:
-            self.missions = [Mission(3), Mission(4), Mission(4), Mission(5,twoSpiesToFail: true), Mission(5, twoSpiesToFail: true)]
+            self.missions = [Mission(3), Mission(4), Mission(4), Mission(5,twoSpiesToFail: true), Mission(5)]
             self.numberOfSpies = 4
         default:
             self.missions = []
@@ -121,7 +121,7 @@ class Game{
             title = "Terceira"
         case 3:
             title = "Quarta"
-        case 5:
+        case 4:
             title = "Quinta"
         default:
             title = "Nenhuma"

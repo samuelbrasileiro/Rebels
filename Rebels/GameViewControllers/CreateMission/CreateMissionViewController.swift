@@ -77,7 +77,7 @@ class CreateMissionViewController: BaseGameViewController {
     func checkEnd(){
         if (game?.checkVotes())!{
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
-            self.navigationController?.pushViewController(vc, animated: false)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         else{
             game?.clear()

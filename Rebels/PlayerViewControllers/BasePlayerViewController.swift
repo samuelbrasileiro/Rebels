@@ -27,7 +27,7 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
     
     var player = Player()
     var index: Int?
-    
+    var didChangeImage: Bool?
     @IBOutlet weak var nome: UITextField!
     @IBOutlet var image: UIImageView!
     @IBOutlet var clickButton: UIButton!
@@ -40,6 +40,7 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
         nome.delegate = self
         buttonOutlet.layer.cornerRadius = 5
         buttonOutlet.layer.masksToBounds = true
+        didChangeImage = false
     }
        
     
@@ -89,6 +90,7 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
         self.image.layer.masksToBounds = true
         self.image.contentMode = .scaleAspectFill
         self.image.image = image
+        didChangeImage = true
         
     }
     

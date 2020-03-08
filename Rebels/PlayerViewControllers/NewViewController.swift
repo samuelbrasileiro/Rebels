@@ -22,10 +22,18 @@ class NewPlayerViewController: BasePlayerViewController {
     
     
     @objc func add() {
-        let newPlayer = Player(name: self.nome.text ?? "", image: self.image.image!)
-        players.append(newPlayer)
-        navigationController?.popViewController(animated: true)
-        
+        if(self.nome.text == "" ||  !didChangeImage!){
+            let alert = UIAlertController(title: "Atenção", message: "É necessário que o jogador tenha um nome e uma foto.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            action.setValue(UIColor.yellow, forKey: "titleTextColor")
+            self.present(alert, animated: true)
+        }
+        else{
+            let newPlayer = Player(name: self.nome.text ?? "", image: self.image.image!)
+            players.append(newPlayer)
+            navigationController?.popViewController(animated: true)
+        }
     }
     
 }

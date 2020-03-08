@@ -90,6 +90,10 @@ class GameViewController: BaseGameViewController {
             if missionPlayers[playerIndex!].getTeam() == .rebel {
                 print(missionPlayers[playerIndex!].getTeam())
                 sabotageButton.isHidden = false
+                instruction.text = "Você é da Aliança Rebelde e está infiltrado no Império. Para prejudicar os planos do Imperador, você pode tanto cooperar quanto sabotar esta missão."
+            }
+            else{
+                instruction.text = "Você é um soldado do Império. É designado para você uma única função: servir ao seu general. Coopere com a missão."
             }
             changeAction(index: self.playerIndex!)
         }
@@ -123,7 +127,7 @@ class GameViewController: BaseGameViewController {
         showActionButtonPhase.exchange()
     }
     func changeAction(index: Int){
-        self.instruction.text = nil
+        
         self.button.isHidden = true
         
         self.name.text = missionPlayers[index].name
@@ -173,7 +177,7 @@ class GameViewController: BaseGameViewController {
     
     func addSabotageButton(){
         sabotageButton = UIButton(frame: CGRect(
-            x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 280,
+            x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 260,
             width: 200, height: 40))
         
         sabotageButton.addTarget(self, action: #selector(sabotageButtonAction(_:)), for: .touchUpInside)
@@ -192,7 +196,7 @@ class GameViewController: BaseGameViewController {
             game?.setWinner()
             game?.clear()
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
-            self.navigationController?.pushViewController(vc, animated: false)
+            self.navigationController?.pushViewController(vc, animated: true)
             return true
         }
         return false
