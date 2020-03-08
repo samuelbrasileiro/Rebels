@@ -89,6 +89,27 @@ class Game{
     func getLeader()->Player{
         return players[leader]
     }
+    func sabotaged(){
+        missions[missionIndex].numberOfFails += 1
+    }
+    func setWinner(){
+        missions[missionIndex].completed = true
+        var spiesToFail = 1
+        if missions[missionIndex].twoSpiesToFail{
+            spiesToFail = 2
+        }
+        print(missions[missionIndex].numberOfFails)
+        if missions[missionIndex].numberOfFails >= spiesToFail{
+            print("LALALAND")
+            missions[missionIndex].winner = .rebel
+        }
+        else{
+            missions[missionIndex].winner = .empire
+        }
+        if missionIndex < 4{
+            missionIndex += 1
+        }
+    }
     func missionTitle()->String{
         var title: String
         switch missionIndex {
@@ -123,8 +144,7 @@ class Game{
     func changeLeader(){
         if(self.leader < players.count - 1){
             self.leader += 1
-            print(self.players[0])
-            print("lider é" + getLeader().name)
+            
         }
         else{
             self.leader = 0

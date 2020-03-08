@@ -57,8 +57,10 @@ class ShowTeamViewController: BaseGameViewController {
         //TIRAR AQ
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateMissionViewController")
         self.navigationController?.pushViewController(vc, animated: false)
+        
         self.playerIndex = 0
         
+        //self.setTitle(title: "Mostrar equipe")
         
         self.image.layer.cornerRadius = self.image.frame.width / 2
         self.image.layer.masksToBounds = true

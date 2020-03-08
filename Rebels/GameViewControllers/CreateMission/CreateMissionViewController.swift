@@ -29,7 +29,8 @@ class CreateMissionViewController: BaseGameViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        print("HAHA")
+        
+        self.setTitle(title: "")
         voteView = VoteMissionView(frame: collection.frame)
         voteView!.isHidden = true
         self.view.addSubview(voteView!)
@@ -145,7 +146,6 @@ extension CreateMissionViewController: UICollectionViewDataSource, UICollectionV
         let availableWidth = collection.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
-        //print(widthPerItem)
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
     func collectionView(_ collectionView: UICollectionView,
@@ -216,5 +216,6 @@ extension CreateMissionViewController: UICollectionViewDataSource, UICollectionV
             
         }
     }
+    
     
 }

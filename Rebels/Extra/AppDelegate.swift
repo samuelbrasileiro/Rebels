@@ -89,7 +89,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-extension UIViewController {
+
+class NRUIViewController: UIViewController {
+    
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+}
+
+class NRUINavigationController: UINavigationController{
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+}
+extension UIViewController{
     func topMostViewController() -> UIViewController {
         if self.presentedViewController == nil {
             return self

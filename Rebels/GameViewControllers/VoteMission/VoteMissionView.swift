@@ -75,7 +75,6 @@ class VoteMissionView: UIView {
         
         for i in 0..<(game?.getMission().players.count)!{
             let player = game?.getMission().players[i]
-           print(player!.name)
             
             self.selectedView.addSubview(participantView(frame: CGRect(x: 0, y: 70*i, width: 200, height: 60), name: player!.name, image: player!.image!))
             
@@ -83,11 +82,7 @@ class VoteMissionView: UIView {
             
         }
     }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-        
-    }
+
     func commonInit(){
         
         Bundle.main.loadNibNamed("VoteMissionView", owner: self, options: nil)
@@ -150,6 +145,11 @@ class VoteMissionView: UIView {
         }
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+        
+    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()

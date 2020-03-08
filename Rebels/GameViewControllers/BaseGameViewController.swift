@@ -12,13 +12,14 @@ class BaseGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.hidesBackButton = true
         self.navigationItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "cancel"), style: .done, target: self, action: #selector(exitAlert)),animated: true)
         self.navigationItem.setRightBarButton(UIBarButtonItem(customView: Pontuation.init(colorArray: (game?.missionsColorArray())!)), animated: true)
         
     }
-    
+    func setTitle(title: String){
+        self.navigationItem.title = title
+    }
     @objc func exitAlert(){
         let actionSheet = UIAlertController(title: "Deseja parar este jogo?", message: nil, preferredStyle: .alert)
         let stop = UIAlertAction(title: "Parar", style: .default, handler: {(action:UIAlertAction) in
