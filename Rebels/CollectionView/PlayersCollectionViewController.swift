@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 var players = [Player]()
 var game: Game?
@@ -28,12 +28,35 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         self.collectionView.bounces = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
         playSound(name: "EndorTheme")
+        
         players = [ Player(name: "Samuel1", image: UIImage(named: "photo1")!),
                     Player(name: "Samuel2", image: UIImage(named: "photo2")!),
                     Player(name: "Samuel3", image: UIImage(named: "photo3")!),
                     Player(name: "Samuel4", image: UIImage(named: "photo4")!),
                     Player(name: "Samuel5", image: UIImage(named: "photo5")!)
                 ]
+        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+//        let playersFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "PlayersDM")
+//         
+//        do {
+//            let fetchedPlayers = try managedObjectContext.fetch(playersFetch) as! [PlayersMO]
+//            print(fetchedPlayers.count)
+//            if(fetchedPlayers.count>=1){
+//            if let players = fetchedPlayers[fetchedPlayers.count-1].players{
+//                print(players[0].name)
+//            }
+//            else{
+//                players = []
+//            }
+//            }else{players = []}
+//        } catch {
+//            fatalError("Failed to fetch players: \(error)")
+//        }
+        
+        
+        
+        
         navigationController?.navigationBar.tintColor = .yellow
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class NewPlayerViewController: BasePlayerViewController {
 
     override func viewDidLoad(){
@@ -37,8 +37,35 @@ class NewPlayerViewController: BasePlayerViewController {
                  createAndShowAlert(message: "Já existe um jogador com este nome, escolha outro.")
             }
             else{
+//                let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//                managedObjectContext.reset()
+//                let playerMO = NSEntityDescription.insertNewObject(forEntityName:"PlayersDM",
+//                                                                           into: managedObjectContext) as! PlayersMO
                 let newPlayer = Player(name: self.nome.text ?? "", image: self.image.image!)
                 players.append(newPlayer)
+//                playerMO.players = players
+//                do {
+//                    try managedObjectContext.save()
+//                } catch {
+//                    fatalError("Failure to save context: \(error)")
+//                }
+//                print("cleito")
+//                let playersFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "PlayersDM")
+//
+//                do {
+//                    let fetchedPlayers = try managedObjectContext.fetch(playersFetch) as! [PlayersMO]
+//                    print(fetchedPlayers.count)
+//                    if let players = fetchedPlayers[fetchedPlayers.count-1].players{
+//                        print(players[0].name)
+//                    }
+//                    else{
+//                        print("blue")
+//                    }
+//                } catch {
+//                    fatalError("Failed to fetch players: \(error)")
+//                }
+                
+                
                 navigationController?.popViewController(animated: true)
             }
         }

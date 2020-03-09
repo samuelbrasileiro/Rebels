@@ -16,7 +16,7 @@ class prepareResultViewController: BaseGameViewController {
     }
     @IBAction func seeResultButton(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultMissionViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
 }

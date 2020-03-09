@@ -38,6 +38,9 @@ class BasePlayerViewController: UIViewController, UITextFieldDelegate, UINavigat
     override func viewDidLoad(){
         super.viewDidLoad()
         nome.delegate = self
+        if self.traitCollection.userInterfaceStyle == .dark{
+            nome.textColor = .white
+        }
         buttonOutlet.layer.cornerRadius = 5
         buttonOutlet.layer.masksToBounds = true
         didChangeImage = false

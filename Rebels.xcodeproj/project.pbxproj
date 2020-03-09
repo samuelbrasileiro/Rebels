@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E08FE0B228DEE1700AC9707 /* PlayMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08FE0A228DEE1700AC9707 /* PlayMissionViewController.swift */; };
+		7E7495832415C71200F3EA68 /* PlayersMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7495822415C71200F3EA68 /* PlayersMO.swift */; };
+		7E7495852415CC6100F3EA68 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7495842415CC6100F3EA68 /* DataController.swift */; };
 		7E75F6CB2281D7EC002A6B3F /* PlayersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */; };
 		7E75F6CF2281DA58002A6B3F /* PlayersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */; };
 		7E75F6DD22835BE8002A6B3F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75F6DC22835BE8002A6B3F /* Game.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		7E08FE0A228DEE1700AC9707 /* PlayMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMissionViewController.swift; sourceTree = "<group>"; };
+		7E7495822415C71200F3EA68 /* PlayersMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersMO.swift; sourceTree = "<group>"; };
+		7E7495842415CC6100F3EA68 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7E75F6CA2281D7EC002A6B3F /* PlayersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewController.swift; sourceTree = "<group>"; };
 		7E75F6CE2281DA58002A6B3F /* PlayersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E75F6DC22835BE8002A6B3F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -86,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E7495812415C6E700F3EA68 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7E7495822415C71200F3EA68 /* PlayersMO.swift */,
+				7E7495842415CC6100F3EA68 /* DataController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		7E75F6CD2281D898002A6B3F /* Extra */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 		7EB5E32D227F7D5D000DD7EE /* Rebels */ = {
 			isa = PBXGroup;
 			children = (
+				7E7495812415C6E700F3EA68 /* CoreData */,
 				7EB5E332227F7D5D000DD7EE /* Main.storyboard */,
 				7E75F6D02281DA60002A6B3F /* CollectionView */,
 				7E9754852285F4CC00D9B8A9 /* PlayerViewControllers */,
@@ -294,10 +308,12 @@
 				7E08FE0B228DEE1700AC9707 /* PlayMissionViewController.swift in Sources */,
 				7EEFA65524157E01009BB7C7 /* endGameViewController.swift in Sources */,
 				7E97547F2285E6F000D9B8A9 /* BaseGameViewController.swift in Sources */,
+				7E7495852415CC6100F3EA68 /* DataController.swift in Sources */,
 				7EB5E337227F7D5D000DD7EE /* Rebels.xcdatamodeld in Sources */,
 				7E9754A4228B654200D9B8A9 /* CreateMissionCollectionViewCell.swift in Sources */,
 				7E97549E22877ADE00D9B8A9 /* Pontuation.swift in Sources */,
 				7EB5E34C227FD900000DD7EE /* Player.swift in Sources */,
+				7E7495832415C71200F3EA68 /* PlayersMO.swift in Sources */,
 				7E75F6DF228367E0002A6B3F /* Mission.swift in Sources */,
 				7EB5E32F227F7D5D000DD7EE /* AppDelegate.swift in Sources */,
 				7E9754A2228B56F700D9B8A9 /* CreateMissionCollectionReusableView.swift in Sources */,

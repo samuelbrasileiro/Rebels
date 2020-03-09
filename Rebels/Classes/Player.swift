@@ -24,13 +24,14 @@ enum Troop: String{
     }
 }
 
-class Player{
+public class Player: NSObject{
     var name: String
-    private var team: Troop
+    var team: Troop
     var vote: Bool
     var selected: Bool
     var image: UIImage?
-    init(){
+    override init(){
+        
         self.name  = "default"
         self.team  = .none
         self.vote  = false
