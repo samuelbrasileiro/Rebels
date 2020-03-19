@@ -29,12 +29,6 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
         playSound(name: "EndorTheme")
         
-        players = [ Player(name: "Samuel1", image: UIImage(named: "photo1")!),
-                    Player(name: "Samuel2", image: UIImage(named: "photo2")!),
-                    Player(name: "Samuel3", image: UIImage(named: "photo3")!),
-                    Player(name: "Samuel4", image: UIImage(named: "photo4")!),
-                    Player(name: "Samuel5", image: UIImage(named: "photo5")!)
-                ]
         let context = AppDelegate.viewContext
         
         let personRequest = NSFetchRequest<Person>(entityName: "Person")
@@ -177,6 +171,7 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
         
         let people = try? context.fetch(peopleRequest)
         for person in people!{
+            
             if person.tag == sourceIndexPath.row{
                 person.tag = Int32(destinationIndexPath.row)
             }
