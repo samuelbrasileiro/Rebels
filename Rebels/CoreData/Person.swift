@@ -10,8 +10,6 @@ import UIKit
 import CoreData
 import Foundation
 
-class PlayersMO: NSManagedObject {
-    
-    @NSManaged var players: [Player]?
-    
+class Person: NSManagedObject {
+    //@NSManaged public var image: UIImage?
 }

@@ -41,30 +41,25 @@ class NewPlayerViewController: BasePlayerViewController {
 //                managedObjectContext.reset()
 //                let playerMO = NSEntityDescription.insertNewObject(forEntityName:"PlayersDM",
 //                                                                           into: managedObjectContext) as! PlayersMO
+                
+                
+                let context = AppDelegate.viewContext
+                
+                let person = Person(context: context)
+                
+                person.tag = Int32(players.count)
+                person.name  = self.nome.text ?? ""
+                //person.image = self.image.image!
+                if let imageData = self.image.image?.pngData() {
+                        person.image = imageData
+                    }
+                do{
+                    try context.save()
+                } catch{
+                    fatalError("Failed to save players: \(error)")
+                }
                 let newPlayer = Player(name: self.nome.text ?? "", image: self.image.image!)
                 players.append(newPlayer)
-//                playerMO.players = players
-//                do {
-//                    try managedObjectContext.save()
-//                } catch {
-//                    fatalError("Failure to save context: \(error)")
-//                }
-//                print("cleito")
-//                let playersFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "PlayersDM")
-//
-//                do {
-//                    let fetchedPlayers = try managedObjectContext.fetch(playersFetch) as! [PlayersMO]
-//                    print(fetchedPlayers.count)
-//                    if let players = fetchedPlayers[fetchedPlayers.count-1].players{
-//                        print(players[0].name)
-//                    }
-//                    else{
-//                        print("blue")
-//                    }
-//                } catch {
-//                    fatalError("Failed to fetch players: \(error)")
-//                }
-                
                 
                 navigationController?.popViewController(animated: true)
             }

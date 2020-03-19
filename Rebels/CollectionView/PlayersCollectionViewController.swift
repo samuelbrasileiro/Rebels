@@ -35,26 +35,17 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
                     Player(name: "Samuel4", image: UIImage(named: "photo4")!),
                     Player(name: "Samuel5", image: UIImage(named: "photo5")!)
                 ]
-        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = AppDelegate.viewContext
         
-//        let playersFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "PlayersDM")
-//         
-//        do {
-//            let fetchedPlayers = try managedObjectContext.fetch(playersFetch) as! [PlayersMO]
-//            print(fetchedPlayers.count)
-//            if(fetchedPlayers.count>=1){
-//            if let players = fetchedPlayers[fetchedPlayers.count-1].players{
-//                print(players[0].name)
-//            }
-//            else{
-//                players = []
-//            }
-//            }else{players = []}
-//        } catch {
-//            fatalError("Failed to fetch players: \(error)")
-//        }
+        let personRequest = NSFetchRequest<Person>(entityName: "Person")
         
+        personRequest.sortDescriptors = [NSSortDescriptor(key: "tag", ascending: true)]
+        let people = try? context.fetch(personRequest)
+        players = []
         
+        for person in people!{
+            players.append(Player(name: person.name!, image: UIImage(data: person.image!)!))
+        }
         
         
         navigationController?.navigationBar.tintColor = .yellow
@@ -177,6 +168,27 @@ class PlayersCollectionViewController: UICollectionViewController, UICollectionV
     override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let temp = players.remove(at: sourceIndexPath.row)
         players.insert(temp, at: destinationIndexPath.row)
+        
+        let context = AppDelegate.viewContext
+        
+        let peopleRequest = NSFetchRequest<Person>(entityName: "Person")
+        
+        peopleRequest.sortDescriptors = [NSSortDescriptor(key: "tag", ascending: true)]
+        
+        let people = try? context.fetch(peopleRequest)
+        for person in people!{
+            if person.tag == sourceIndexPath.row{
+                person.tag = Int32(destinationIndexPath.row)
+            }
+            else if person.tag == destinationIndexPath.row{
+                person.tag = Int32(sourceIndexPath.row)
+            }
+        }
+        do{
+            try context.save()
+        } catch{
+            fatalError("Não foi possível trocar")
+        }
     }
     
     

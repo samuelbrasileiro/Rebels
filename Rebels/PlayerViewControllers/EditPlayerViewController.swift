@@ -49,19 +49,24 @@ class EditPlayerViewController: BasePlayerViewController {
                  createAndShowAlert(message: "Já existe um jogador com este nome, escolha outro.")
             }
             else{
-//                let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//                managedObjectContext.reset()
-//                let playerMO = NSEntityDescription.insertNewObject(forEntityName:"PlayersDM",
-//                                                                           into: managedObjectContext) as! PlayersMO
+                
                 players[index!] = Player(name: self.nome.text ?? player.name, image: self.image.image ?? player.image!)
-//
-//
-//                playerMO.players = players
-//                do {
-//                    try managedObjectContext.save()
-//                } catch {
-//                    fatalError("Failure to save context: \(error)")
-//                }
+                let context = AppDelegate.viewContext
+                
+                let personRequest = NSFetchRequest<Person>(entityName: "Person")
+                personRequest.predicate = NSPredicate(format: "tag = %i", index!)
+                
+                let people = try? context.fetch(personRequest)
+            
+                people![0].name  = self.nome.text ?? player.name
+                people![0].image = self.image.image?.pngData() ?? player.image!.pngData()
+                
+                do{
+                    try context.save()
+                } catch{
+                    print(error)
+                    fatalError()
+                }
                 navigationController?.popViewController(animated: true)
             }
         }
